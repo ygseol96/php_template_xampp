@@ -1,0 +1,92 @@
+<?php
+/** ---------------------------------------------------------------
+@program : 메뉴별 관리코드
+@description : 시스템관리  > 메뉴별 관리코드 리스트
+@fileinfo : /sys/code_menu.html
+@filedescription : 
+
+@auth : 현민원
+@since : 2024.2
+------------------------------------------------------------------**/
+
+
+include_once $_SERVER['DOCUMENT_ROOT']."/inc/adm_include.php";
+
+
+
+
+//왼쪽메뉴 생성
+$leftmenu = get_admin_leftmenu("6");
+
+
+
+//gnb selector
+$hgnb = 5;
+
+
+//왼쪽메뉴 하이라이트
+$dmenu = 89;
+
+// 권한체크
+$result = get_admin_auth($dmenu);
+if($result['result']  != 'Y') {
+	alert($result['msg'], 'url', '/');
+
+}
+
+$_SESSION['list_url'] = getURL();
+
+
+
+$s_where = " a.depth ='1' ";
+$s_orderby = " order by a.order_no asc ";
+
+
+//대메뉴 가져오기
+$sql = "
+	SELECT
+		*
+
+	FROM code_menu as a
+	where 
+		{$s_where}
+		{$s_orderby}
+		
+";
+
+//write($sql);
+$data = my_select($sql, $myconn);
+$data_cnt = my_count($data); 
+
+
+
+
+
+
+
+// ============= TEMPLATE START =========================//
+$tpl = new Template; 
+$tpl->skin = $_SESSION['adm_skin'];
+
+
+
+
+
+include_tpl('sys/code_menu.tpl');
+
+basic_tpl();
+
+////// 바디 입력값 설정
+$tpl->assign(array(
+	'dmenu' => $dmenu,
+		
+	'data'=>$data,
+	
+
+));
+
+// 템플릿 출력
+$tpl->print_('body'); 
+
+db_close();
+?>

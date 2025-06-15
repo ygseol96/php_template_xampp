@@ -1,0 +1,96 @@
+<?php
+/** ---------------------------------------------------------------
+@program : 도시코드 등록/수정
+@description : 시스템관리  > 통합코드 > 도시코드 등록/수정
+@fileinfo : /sys/code_city_write.html
+@filedescription : 
+
+	code_city
+	code_nation
+
+
+@auth : 현민원
+@since : 2024.1
+------------------------------------------------------------------**/
+
+
+include_once $_SERVER['DOCUMENT_ROOT']."/inc/adm_include.php";
+
+// 권한체크
+//왼쪽메뉴 하이라이트
+$dmenu = 87;
+
+$result = get_admin_auth($dmenu);
+if($result['result']  != 'Y') {
+	alert($result['msg'], 'popup_close');
+
+}
+
+
+if(empty($_REQUEST['seq'])) {
+
+	$editmode = "code_city_insert";
+	$data = array();
+	
+
+}
+else {
+	
+	$editmode = "code_city_update";
+	
+	//도시코드 정보 가져오기
+	$sql = "
+		SELECT
+			*
+		FROM code_city as a
+		where 
+			a.city_seq = '".$_REQUEST['seq']."'
+			
+			
+	";
+
+	//write($sql);
+	$data = my_select_one($sql, $myconn);
+}
+
+
+//국가 가져오기
+$sql = "
+	select
+		nat_cd as value
+		, concat(nat_cd, '(', nat_nm_kr, ')') as name
+	from code_nation
+	
+	order by nat_nm_kr asc
+";
+$nat = my_select($sql, $myconn);
+
+
+
+
+// ============= TEMPLATE START =========================//
+$tpl = new Template; 
+$tpl->skin = $_SESSION['adm_skin'];
+
+
+
+
+
+include_tpl('sys/code_city_write.tpl');
+
+basic_tpl();
+
+////// 바디 입력값 설정
+$tpl->assign(array(
+	'editmode' => $editmode,
+	'data' => $data,
+	'nat' => $nat,
+	
+
+));
+
+// 템플릿 출력
+$tpl->print_('body'); 
+
+db_close();
+?>

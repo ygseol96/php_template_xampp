@@ -1,0 +1,1025 @@
+@charset "utf-8";
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+.nanumgothic {
+ font-family: 'Nanum Gothic', sans-serif;
+}
+
+a {color:none}
+body {overflow-x:hidden; *overflow-x:auto; _overflow-x:auto;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,form,fieldset,p,button{margin:0;padding:0;}
+body,div,dl,dt,dd,h1,h2,h3,h4,form,fieldset,p,th,td,input{color:#333; font-family:nanumgothic,dotum,돋움,sans-serif; font-size:11px; font-weight:normal;}
+hr{display:none;}
+img,fieldset{border:0 none;width:100%;height:100%;}
+ul,ol,li{list-style:none outside;}
+img,input,select,textarea{vertical-align:middle;}
+input[type="button"] {border:none; cursor:pointer;}
+
+#SY {position:relative; width:100%; text-align:center; display:inline-flex;}
+.SYinputHidden {vertical-align:middle; border:none; height:20px; color:#000000; font-weight:bold; padding-top:3px;}
+
+body.SYSkin01 #SYTopGNB .GNBTopMenu ul.GNBTopMenuArea li.on, body.SYSkin01 #SYLeftMenu ul.title li.on {border-bottom:2px solid #3E328E;}
+body.SYSkin01 #SYContentTitle li.title {border-left:3px solid #3E328E;}
+body.SYSkin01 table.SYManagerTable01 tr.Title td {border-bottom:1px solid #DDE1E8;}
+body.SYSkin01 #SYPageBox td.On, body.SYSkin01 table.SYManagerTable01 tr.Title td .on, body.SYSkin01 table.SYManagerTable01 tr.Title td .off {color:#3E328E;}
+body.SYSkin01 #SYPageBox .SYSearchBox01 ul.TitleBar .title, body.SYSkin01 #SYPageBox .SYSearchBox01 ul.TitleBar .number {color:#DDE1E8;}
+
+#SYTopGNB {position:relative;  margin:0; padding:0; width:1730px;}
+/*#SYTopGNB .GNBHeader {position:relative; height:44px; overflow:hidden; background:url(../img/sy_bg_top_gnb_bg01.gif) repeat-x; }*/
+#SYTopGNB .GNBHeader {position:relative; height:66px; overflow:hidden; background-color:#ffffff;}
+#SYTopGNB .GNBHeader ul li{float:left; font-family:nanumgothic,dotum,돋움,sans-serif; width:70px;}
+#SYTopGNB .GNBHeader li.AHLogo {position:relative;  top:0; width:205px; height:64px; padding:0; text-align:left; background:#fff }
+#SYTopGNB .GNBHeader li.AHLogo img {padding-top:7px ; vertical-align:middle;}
+#SYTopGNB .GNBHeader li.TitleArea {position:relative; float:left; top:11px; left:10px; margin:0;}
+#SYTopGNB .GNBHeader li.TitleArea li {position:relative; float:left; height:34px; margin:0 10px; font-size:15px; }
+#SYTopGNB .GNBHeader li.TitleArea .SYTopMenuOn {position:absolute; width:26px; height:7px; top:27px; left:43%; background:url(../img/sy_bg_select_menu01.gif) no-repeat;}
+#SYTopGNB .GNBHeader li.TitleArea .SYArrowPrev {width:20px; height:20px; background:url(../img/sy_btn_arrow_prev04.gif) center 4px no-repeat; cursor:pointer; border:none;}
+#SYTopGNB .GNBHeader li.TitleArea .SYArrowNext {width:20px; height:20px; background:url(../img/sy_btn_arrow_next04.gif) center 4px no-repeat; cursor:pointer; border:none;}
+#SYTopGNB .GNBHeader li.TitleArea li.SYArrow {margin:0 2px;}
+#SYTopGNB .GNBHeader li.TitleArea li a {text-decoration:none; color:white; font-family:nanumgothic,dotum,돋움,sans-serif; font-weight:bold}
+#SYTopGNB .GNBHeader li.TitleArea .bar {float:left; width:3px; height:30px; margin:0 3px; background:url(../img/sy_logo_title02.gif) 0 4px no-repeat;}
+#SYTopGNB .GNBHeader li.LoginBtnArea {position:relative;  padding:11px 5px 0px 15px; color:#CCC; font-size:normal 11px 돋움,dotum,Apple Gothic,sans-serif; }
+#SYTopGNB .GNBHeader li.LoginArea {position:relative;  width:150px;  padding:11px 5px 0 0px; color:#CCC; font-size:normal 11px; font-family:돋움,dotum,Apple Gothic,sans-serif; float:right; margin-top:30px;}
+
+
+#SYTopGNB .GNBHeader li.LoginArea .name {color:#000; font-weight:bold;}
+#SYTopGNB .GNBHeader li.LoginArea .link {margin-left:10px; color:#CCC;}
+#SYTopGNB .GNBHeader li.LoginArea .btn {color:#FFF; font-weight:bold; margin-right:10px}
+#SYTopGNB .GNBHeader li.LoginArea .bar {margin:0 3px; padding:0; color:#CCC; font-size:6px;}
+
+#SYTopGNB .GNBHeader li.LoginArea a:link, a:visited{COLOR:#CCC; text-decoration:none;}
+#SYTopGNB .GNBHeader li.LoginArea a:hover{COLOR:#F5F5F5;text-decoration:underline}
+
+#SYTopGNB .GNBTopMenu {width:1050px;height:29px;  float:left;}
+#SYTopGNB .GNBTopMenu li{font-size:11px; margin-right:10px ; margin-top:3px;color:#000; cursor:pointer;  padding:15px 10px;}
+#SYTopGNB .GNBTopMenu li.on {background-color:#eee;}
+#SYTopGNB .GNBTopMenu li.on  span{ }
+
+#SYTopGNB .GNBTopMenu li span{font-size:12px;  color:#777; font-weight:500; display:block; width:100%; text-align:center;}
+.GNBTopMenu div { text-align:center; margin-bottom:5px;} 
+
+
+/*#SYTopGNB .GNBTopMenu li:hover {font-weight:900;font-size:18px }*/
+
+/*
+#SYTopGNB .GNBTopMenu {position:relative; height:33px; margin-top:-2px; background:url(../img/sy_bg_top_gnb_menu_bg01.gif) 0 -1px repeat-x;}
+#SYTopGNB .GNBTopMenu ul.GNBTopMenuArea {position:relative; height:29px; padding:0;  }
+#SYTopGNB .GNBTopMenu ul.GNBTopMenuArea li {position:relative; float:left; height:29px; padding:0; color:#FFF; font-weight:bold;}
+#SYTopGNB .GNBTopMenu ul.GNBTopMenuArea li ul.Menu {position:relative; float:left; height:29px; padding-top:4px;}
+#SYTopGNB .GNBTopMenu ul.GNBTopMenuArea li ul.Menu li {float:left; height:20px; padding-top:2px; margin:0 10px; }
+#SYTopGNB .GNBTopMenu ul.GNBTopMenuArea li ul.Menu li span a {float:left; height:17px; margin:0 10px; overflow:hidden; }
+#SYTopGNB .GNBTopMenu ul.GNBTopMenuArea li ul.Menu li.On {background-color:#3A3540; border:1px solid #252525; }
+#SYTopGNB .GNBTopMenu ul.GNBTopMenuArea li ul.Menu li a {text-decoration:none; color:#fff;}
+#SYTopGNB .GNBTopMenu ul.GNBTopMenuArea li.Option {width:199px; height:28px; margin:0; padding:5px 5px 0 0; border-right:1px solid #3B3B3B; text-align:right;}
+#SYTopGNB .GNBTopMenu ul.GNBTopMenuArea li.Search {float:right; height:29px; margin:0; padding:4px 10px 0 0; *padding-top:2px; _padding-top:2px;}
+#SYTopGNB .GNBTopMenu ul.GNBTopMenuArea li.bar {width:2px; margin:0 5px; padding:0; background:url(../img/sy_bg_menu_bar01.gif) 0 6px no-repeat; border:none;}
+*/
+
+#LeftMenu  {width:191px ;  text-align:left; }
+#LeftMenu ul {padding-left:5px; padding-right:5px}
+#LeftMenu ul li{border-bottom:1px dotted #999;height:26px;padding:13px 0px 0px 0px}
+#LeftMenu ul li.On{ background:url(../img/sy_bg_left_menu_bar01.gif) right 15px no-repeat; color:#000}
+#LeftMenu ul li a { text-decoration:none;font:bold 15px "돋음",dotum,sans-serif; color:#333;letter-spacing:-3px }
+
+#LeftMenuMw  {width:191px ;  text-align:left;  }
+#LeftMenuMw ul {padding-left:5px; padding-right:5px}
+#LeftMenuMw ul li{border-bottom:1px dotted #999;height:20px;padding:5px 0px 0px 0px}
+#LeftMenuMw ul li.On{ background:url(../img/sy_bg_left_menu_bar01.gif) right 10px bottom 7px no-repeat; color:#000; }
+#LeftMenuMw ul li a { text-decoration:none;font:bold 15px "돋음",dotum,sans-serif; color:#333;letter-spacing:-3px }
+
+#SYContent {position:relative; width:100%; margin:0; padding:0; overflow:hidden; }
+#SYLeftArea {position:relative;  min-width:200px;  }
+#SYLeftMenu {position:relative;}
+
+#SYLeftMenu ul.list {position:relative; min-width:200px; margin:5px auto; overflow:hidden;}
+#SYLeftMenu ul.list li {position:relative; float:left; min-width:182px; height:28px; margin:-1px; padding:8px 0 2px 4px; text-align:left; border-top:1px solid #E9E9E9;}
+#SYLeftMenu ul.list li.On {font-weight:bold; background:url(../img/sy_bg_left_menu_bar01.gif) right 12px no-repeat;}
+#SYLeftMenu ul.list li span a {float:left; width:235px; height:20px; overflow:hidden; text-indent:-3000px;}
+
+#SYRightArea {position:relative;  padding:0 5px 10px 5px; overflow:hidden; text-align:left;  min-width:1500px; }
+#SYMainContent {position:relative; top:5px; text-align:left;}
+#SYTabMenu01 {position:relative; height:36px; background:url(../img/sy_bg_title02.gif) repeat-x; border:1px solid #DDD; border-top:none; border-bottom:none;}
+#SYTabMenu01 ul {height:35px; padding-top:1px;}
+#SYTabMenu01 li {float:left; height:25px;; padding:10px 15px 0 15px; border-right:1px solid #E5E5E5; cursor:pointer;}
+#SYTabMenu01 li.on {font-weight:bold; background-color:#FFF;}
+#SYTabMenu01 li.right {float:right; height:30px; padding-top:5px; border:none;}
+#SYTabMenu01 li.Search {float:left; height:30px; padding-top:5px; border:none;}
+
+#SYSubTabMenu01 {position:relative; height:36px; border:none;}
+#SYSubTabMenu01 ul {height:35px; padding-top:1px;}
+#SYSubTabMenu01 li {float:left; height:25px;; padding:10px 15px 0 15px;}
+#SYSubTabMenu01 li.on {font-size:13px; font-weight:bold; background-color:#FFF;}
+#SYSubTabMenu01 li.bar {margin:0 2px; padding:10px 0 0 0; color:#CCC; font-size:10px;}
+
+
+#SYContentTitle {position:relative; height:38px; margin-top:10px; padding:0; background:url(../img/sy_bg_title02.gif) repeat-x;}
+#SYContentTitle ul {height:26px; margin:0; padding:0px 10px 0 10px; }
+#SYContentTitle li.Title {float:left; width:605px; height:16px; *height:12px; _height:12px; padding:1px 0 0 5px; *padding-top:2px; _padding-top:2px; font:bold 14px AppleGothic,"굴림",gulim,sans-serif; text-align:left; border-left:3px solid #3D5F7D;}
+#SYContentTitle li.Navi {float:right; width:695px; height:11px; margin-top:2px; padding-top:3px; color:#999; font-size:11px; text-align:right;}
+#SYContentTitle .Ntitle{font-size:14px; font-weight:bold;display:inline-block;float:left;margin-right:20px; width:60%}
+#SYContentTitle .Nsub{display:inline-block;float:right;margin-right:50px;width:20%}
+
+#SYTabMenuType01 {position:relative; height:36px; margin-top:5px; background:url(../img/sy_bg_tab_menu01.gif) repeat-x; border-right:1px solid #DDD;}
+#SYTabMenuType01 ul {height:36px;}
+#SYTabMenuType01 li {float:left; height:24px; margin-right:-1px; padding:11px 15px 0 15px; border-left:1px solid #E5E5E5; border-right:1px solid #E5E5E5; cursor:pointer;}
+#SYTabMenuType01 li.On {margin:0; font-weight:bold; background-color:#FFF; border-top:1px solid #000; border-right:1px solid #000; border-left:1px solid #000;}
+
+.SYTopSearch {position:relative; padding:10px; border:1px solid #E5E5E5; border-top:none;}
+.SYTopSearch h3.Content {padding-bottom:8px;}
+.SYTopSearch h3.Tip {padding:1px 0 0 30px; *padding-top:2px; _padding-top:2px; font-size:11px; text-align:left; background:url(../img/sy_icon_tip01.gif) no-repeat;}
+
+.SYSubTitle01 {position:relative; margin-top:15px; padding:0; font:bold 13px '나눔고딕', NanumGothic, NanumGothicOTF, '돋움', Dotum, '굴림', Gulim, AppleGothic, Sans-serif; text-align:left;}
+
+.SYContentInfo {position:relative; margin:0; padding:0 10px 10px 10px;}
+.SYContentInfo p {position:relative; margin-top:8px;}
+.SYContentInfo .Ex {margin:3px 0; padding:1px 0 0 30px; *padding-top:2px; _padding-top:2px; font-size:11px; text-align:left; background:url(../img/sy_icon_ex01.gif) no-repeat;}
+.SYContentInfo .Tip {margin:3px 0; padding:1px 0 0 30px; *padding-top:2px; _padding-top:2px; font-size:11px; text-align:left; background:url(../img/sy_icon_tip01.gif) no-repeat;}
+
+.SYContentEx {position:relative; margin-top:5px; padding:10px; border:3px solid #222;}
+
+.SYSampleBox {position:relative; *width:100%; _width:100%; margin-top:5px; padding:15px; border:3px solid #3C5E7C;}
+.SYSampleSource {position:relative; margin-bottom:15px; padding:0px; background-color:#F9F9F9; border-bottom:2px solid #DDD;}
+
+.SYTableTitleBar {position:relative; height:30px; margin-top:10px; background-color:#F5F5F5;}
+.SYTableTitleBar ul {height:26px; padding:3px 9px 0 9px;  border:1px solid #E5E5E5; border-bottom:none;}
+.SYTableTitleBar li.Left {float:left; width:430px; height:26px;}
+.SYTableTitleBar li.Right {float:right; width:340px; height:26px; text-align:right;}
+.SYTableTitleBar .Title {color:#000; font-weight:bold;}
+.SYTableTitleBar .Number {color:#000; font-family:tahoma,verdana; font-size:11px; font-weight:bold;}
+.SYTableTitleBar .bar {margin:0 2px; color:#666;}
+
+.SYSearchBox01 {position:relative; margin:10px 0;}
+.SYSearchBox01 .TitleBar {position:relative; height:34px; background:url(../img/sy_bg_search_box01.gif) repeat-x;}
+.SYSearchBox01 .TitleBar ul {position:relative; height:34px; padding:0 9px 0 9px;  border:1px solid #DDD; border-top:none; border-bottom:none;}
+.SYSearchBox01 .TitleBar li {position:relative; top:6px; *top:4px; _top:4px;}
+.SYSearchBox01 .TitleBar li.Left {float:left; width:350px; height:26px; padding-top:4px; color:#666; font-weight:11px;}
+.SYSearchBox01 .TitleBar li.Right {float:right; width:450px; height:26px; padding:0; text-align:right;}
+.SYSearchBox01 .TitleBar .Title {color:#000; font-weight:bold;}
+.SYSearchBox01 .TitleBar .Number {color:#000; font-family:tahoma,verdana; font-size:11px; font-weight:bold;}
+.SYSearchBox01 .TitleBar .bar {margin:0 2px; color:#666;}
+.SYSearchBox01 .SearchBox {position:relative; overflow:hidden;}
+.SYSearchBox01 .SearchBox ul {*float:left; _float:left; padding:4px 9px; overflow:hidden; border:1px solid #EEE; border-top:none;}
+.SYSearchBox01 .SearchBox li {float:left; width:100%; padding:4px 0 3px 0;}
+.SYSearchBox01 .SearchBox li .title {margin-right:5px; font-weight:bold;}
+.SYSearchBox01 .SearchBox li .bar {margin:0 5px;}
+.SYSearchBox01 .SearchBox li .Line {margin-top:7px; padding-top:5px; border-top:1px dashed #E5E5E5;}
+.SYSearchBox01 .SearchBox li h3.Tip {padding:0 0 0 30px; *padding-top:2px; _padding-top:2px; font-size:11px; text-align:left; background:url(../img/sy_icon_tip01.gif) no-repeat;}
+.SYSearchBox01 .SearchBox .schTitle{font-weight:bold;display:inline-block;width:100px;margin-right: 15px; padding-left:5px; border-right:2px solid #888 }
+
+.SYSearchBox01 .SYDateViewArea {position:relative; height:20px;}
+.SYSearchBox01 .SYDateViewArea .Left {position:absolute; top:4px; left:4px; font-size:11px;}
+.SYSearchBox01 .SYDateViewArea .Right {position:absolute; top:4px; right:4px; font-size:11px;}
+
+
+
+.SYReplyContent {position:relative; margin-top:10px; padding:10px 10px; overflow:hidden; background-color:#F5F5F5; border-bottom:1px solid #E5E5E5;}
+.SYReplyContent ul.SYReplyWrite {margin-top:-1px; padding-top:5px; text-align:center; background-color:#F5F5F5;}
+.SYReplyContent ul.SYReplyList {position:relative; overflow:hidden;}
+.SYReplyContent .SYReplyList li {position:relative; padding:10px 10px; overflow:hidden; border-bottom:1px solid #E5E5E5;}
+.SYReplyContent .SYReplyList li p.SYTitle {position:relative;}
+.SYReplyContent .SYReplyList li p.SYTitle .Agency {padding:3px 5px 2px 5px; color:#FFF; font-size:11px;}
+.SYReplyContent .SYReplyList li p.SYTitle .Right {position:absolute; top:-2px; right:0; *right:33px; _right:33px;}
+.SYReplyContent .SYReplyList li p.SYConetnt {margin-top:10px; padding:0 5px;}
+
+.SYManagerTable {position:relative;  margin:0; padding:0;}
+.Scroll {overflow:auto; overflow-y:hidden; border-left:1px solid #E5E5E5; border-right:1px solid #E5E5E5;}
+.SYManagerTable h3 {position:relative; margin:7px 0 3px 0; font-size:12px; font-weight:bold;}
+.SYManagerTable02 {position:relative; float:left; width:100%; margin:5px 0 15px 0;}
+table.SYManagerTable01 ,table.SYManagerTable03 {border-collapse:collapse; width:100%; font-size:12px; color:#303030; font-family:돋움,Dotum,AppleGothic,sans-serif; text-decoration:none; border:1px solid #E5E5E5; border-top:none;}
+table.SYManagerTable01 tr ,table.SYManagerTable03 tr {width:100%;}
+table.SYManagerTable01 td {height:20px; padding:2px; border-right:1px solid #EEE; border-bottom:1px solid #EEE;}
+table.SYManagerTable03 td {height:20px; padding:2px; border-right:1px solid #EEE; border-bottom:1px solid #EEE;}
+table.SYManagerTable01 tr.Title ,table.SYManagerTable03 tr.Title {width:100%; background:url(../img/sy_bg_table_bar01.gif) repeat-x;}
+table.SYManagerTable01 tr.Title td, table.SYManagerTable03 tr.Title td {height:18px; text-align:center; border-right:none; border-bottom:1px solid #EEE;}
+table.SYManagerTable01 tr.Title td .On {height:15px; padding-bottom:4px; color:#000; background:url(../img/sy_btn_admin_arrow01.gif) center 12px no-repeat;}
+table.SYManagerTable01 tr.Title td .Off {height:15px; padding-bottom:4px; color:#000; background:url(../img/sy_btn_admin_arrow02.gif) center 12px no-repeat;}
+table.SYManagerTable01 tr.Title02 {width:100%;height:28px;  color:#000; font-size:11px; background:url(../img/sy_bg_table_bar02.gif) center 2px repeat-x;}
+table.SYManagerTable01 tr.Title03 {width:100%;height:26px;  color:#000; font-size:11px; background:url(../img/sy_bg_table_bar02_02.gif) 0 -1px repeat-x;}
+table.SYManagerTable01 tr.Title02 td{height:19px; text-align:center;}
+/* *html table.SYManagerTable01 tr.Title02 td{height:18px;} */
+table.SYManagerTable01 tr.Title03 td {height:15px; text-align:center;}
+/* *html table.SYManagerTable01 tr.Title03 td{height:16px; text-align:center;} */
+table.SYManagerTable01 tr.Title02 td.00 {height:57px; *height:56px; _height:56px; padding:0; color:#000; background:url(../img/sy_bg_table_bar02.gif) repeat-x;}
+table.SYManagerTable01 tr.Title02 td.01 {color:#000; background:url(../img/sy_bg_table_bar02_01.gif) repeat-x;}
+table.SYManagerTable01 tr.Title03 td.02 {color:#000; background:url(../img/sy_bg_table_bar02_02.gif) bottom repeat-x;}
+table.SYManagerTable01 td.none {height:90px; padding:5px 3px 2px 3px; color:#999; font-size:11px; text-align:center; border-right:1px solid #EEE; border-bottom:1px solid #EEE;}
+table.SYManagerTable01 td a {color:none;}
+
+table.SYManagerTable01 tr:hover td{background-color:#eee;}
+
+table.SYManagerTable03 td.none {height:166px; *height:167px; _height:167px; padding:5px 3px 2px 3px; color:#999; font-size:11px; text-align:center; border:none;}
+
+table.SYWirteTable {
+	position:relative;
+	border-collapse:collapse; width:100%; font-size:11px; color:#303030; font-family:돋움,Dotum,AppleGothic,sans-serif; 
+	text-decoration:none; border:1px solid #EEE; border-top:2px solid #EEE; border-bottom:2px solid #EEE;
+	}
+table.SYWirteTable tr {width:100%;}
+table.SYWirteTable td {height:20px; padding:2px 4px 2px 4px; border-right:1px solid #EEE; border-bottom:1px solid #EEE;}
+
+table.SYWirteTable td.Title { padding-left:11px; line-height:22px; color:#333; font-weight:bold; background-color:#F9F9F9;}
+table.SYWirteTable td.TitleRed { padding-left:11px; line-height:22px; color:#ff0000; font-weight:bold; background-color:#ffb3b3;}
+table.SYWirteTable td.Check {color:#000; background:url(../img/sy_icon_table_check01.gif) #F9F9F9 4px 45% no-repeat;}
+table.SYWirteTable td.Content { position:relative;}
+table.SYWirteTable td.ContentRed { position:relative; color:#ff0000;  background-color:#ffb3b3; }
+table.SYWirteTable td.table {margin:0; padding:0 0 0 8px;}
+table.SYWirteTable .bar {margin:0 5px;}
+table.SYWirteTable .ex01 {color:#999; font-size:11px;}
+table.SYWirteTable .Tip01 {padding:0 0 0 30px;  font-size:11px; text-align:left; background:url(../img/sy_icon_tip01.gif) no-repeat; margin:3px; color:red}
+table.SYWirteTable .Tip {display:inline-block;padding:0 0 0 30px;  font-size:11px; text-align:left; background:url(../img/sy_icon_tip01.gif) no-repeat; margin:3px; color:red}
+table.SYWirteTable .comment { padding:10px 10px 10px 0px; }
+
+
+
+table.SYWirteTable2 {
+	position:relative;
+	border-collapse:collapse; width:100%; font-size:11px; color:#303030; font-family:돋움,Dotum,AppleGothic,sans-serif; 
+	text-decoration:none; border:1px solid #EEE; border-top:1px solid #EEE; border-bottom:1px solid #EEE;
+	}
+table.SYWirteTable2 tr {width:100%;}
+table.SYWirteTable2 td {height:20px; padding:2px 4px 2px 4px; border-right:1px solid #EEE; border-bottom:1px solid #EEE;}
+
+table.SYWirteTable2 td.Title { padding-left:11px; line-height:22px; color:#333; font-weight:bold; background-color:#F9F9F9;}
+table.SYWirteTable2 td.TitleRed { padding-left:11px; line-height:22px; color:#ff0000; font-weight:bold; background-color:#ffb3b3;}
+table.SYWirteTable2 td.Check {color:#000; background:url(../img/sy_icon_table_check01.gif) #F9F9F9 4px 45% no-repeat;}
+table.SYWirteTable2 td.Content { position:relative;}
+table.SYWirteTable2 td.ContentRed { position:relative; color:#ff0000;  background-color:#ffb3b3; }
+table.SYWirteTable2 td.table {margin:0; padding:0 0 0 8px;}
+table.SYWirteTable2 .bar {margin:0 5px;}
+table.SYWirteTable2 .ex01 {color:#999; font-size:11px;}
+table.SYWirteTable2 .Tip01 {padding:0 0 0 30px;  font-size:11px; text-align:left; background:url(../img/sy_icon_tip01.gif) no-repeat; margin:3px; color:red}
+table.SYWirteTable2 .Tip {display:inline-block;padding:0 0 0 30px;  font-size:11px; text-align:left; background:url(../img/sy_icon_tip01.gif) no-repeat; margin:3px; color:red}
+table.SYWirteTable2 .comment { padding:10px 10px 10px 0px; }
+
+
+.SYImageArea {position:absolute; top:1px; right:0; width:198px; *width:200px; _width:200px; height:179px; *height:182px; _height:182px; text-align:center; background-color:#fff; border:1px solid #EEE;}
+.SYImageArea h3 {position:relative; width:190px; height:150px; margin:0 auto;}
+
+.TableBG01 {background-color:#FFF;}
+.TableBG02 {background-color:#F6F6F6;}
+.TableBG03 {background-color:#FBFBFB;}
+.TableBG04 {background-color:#F8FCFD;}
+.TableBG05 {background-color:#EEEEEE;}
+.SYNobr {width:90%; height:14px; line-height:14px; padding:0 8px; overflow:hidden;}
+
+.SYAgency {padding:4px 0; overflow:hidden; color:#FFF; font-weight:bold; text-indent:4px;}
+
+table.SYNoTable01, table.SYNoTable02 {position:relative; border-collapse:collapse; width:100%; padding:0; font-size:12px; color:#303030; font-family:돋움,Dotum,AppleGothic,sans-serif; text-decoration:none; border:none;}
+table.SYNoTable01 td {padding:10px; border:none;}
+table.SYNoTable02 {margin:0;}
+table.SYNoTable02 td {padding:0; border:none;}
+
+
+.SYButtonArea {position:relative; margin:15px 0 10px 0; text-align:center;}
+
+#SYFooter {
+	position:relative; clear:both;width:100%; height:50px; margin:0; padding-top:0px; text-align:center; 
+	background:url(../img/sy_bg_bottom_line.gif) center top 2px #FFF no-repeat; border-top:1px solid #DDD; 
+	z-index:-1;
+}
+.SYCopyright {position:relative;width:100%;height:39px; margin-top:10px; font-size:15px; font-weight:bold;  }
+
+
+.SYSelectArea {position:relative;  margin:0; padding:0; font-size:12px; cursor:pointer;}
+.SYselectList {position:absolute; top:22px; left:0; width:100%; margin:0; padding:0;  border:1px solid #DDD; background-color:#FFF; color:#000; font-size:12px;}
+.SYselectList2 {position:absolute; top:3px; left:168px; width:100%; border:1px solid #DDD; background-color:#FFF; color:#000; font-size:12px;}
+.SYselectList3 {position:absolute; top:22px; left:0; width:100%; height:200px; overflow:auto; overflow-x:hidden; border:1px solid #DDD; background-color:#FFF; color:#000000; font-size:11px;}
+.SYselectList li, .SYselectList2 li{height:18px; *height:22px; _height:22px; padding:4px 4px 0 4px; *padding:4px 4px 0 4px; _padding:4px 4px 0 4px; line-height:18px; cursor:pointer;}
+#JoinMemberWrite ul.writeForm li.content .SYselectList3 li {width:100%; height:10px; padding:0 3px 0 3px;}
+.SYselectList3 li a.hover {background-color:#e5e5e5;}
+.SYselectList li.cate {position:relative; background:url(../img/sy_icon_arrow01.gif) right 7px no-repeat; }
+.SYselectList li.plus {color:#3E3296; text-indent:10px; background:url(/SYdesignImage/sy_icon_plus01.gif) 3px 8px no-repeat; border-top:1px solid #DDD;}
+.SYselectList li .cate, .SYselectList2 li .cate{width:100%; background:url(../img/sy_icon_arrow01.gif) 2px right no-repeat; }
+.SYareaBG {position:absolute; top:22px; left:-60px; z-index:-1px; width:200%; height:320px;}
+.SYSelectBoxList {position:absolute; top:22px; left:0; width:98px; *width:100px; _width:100px; height:198px; *height:200px; _height:200px; overflow:auto; overflow-x:hidden; text-align:left; background-color:#FCFCFC; border:1px solid #DDD;}
+.SYSelectBoxList ul {float:left; width:100%; margin:0;}
+.SYSelectBoxList li {float:left; width:100%; height:18px; *height:22px; _height:22px; padding:4px 4px 0 4px; *padding:4px 4px 0 4px; _padding:4px 4px 0 4px; line-height:18px; color:#000000; font-weight:normal; cursor:pointer;}
+.SYSelectBoxListBG {position:absolute; top:-100px; left:-100px; width:400px; height:400px;}
+
+.SYBoxContentStyle01 {position:relative; padding:10px; border:1px solid #E5E5E5;}
+.SYTargetView {display:inline; height:25px; padding:10px 0; margin:3px 10px 10px 0; line-height:180%; font:bold 11px 돋음,Dotum,AppleGothic,sans-serif;}
+
+.SYColorList {position:absolute; top:-10px; left:12px;  width:108px; *width:120px; _width:120px; margin:0; padding:7px 5px;  border:1px solid #DDD; background-color:#FFF; color:#000; font-size:12px;}
+.SYColorList ul {float:left; width:100%;}
+.SYColorList li {float:left; width:15px; height:15px; margin:3px; cursor:pointer;}
+.SYColorListBG {position:absolute; top:-100px; left:-100px; width:400px; height:400px;}
+
+.SYselect01 {width:97%; height:19px; padding:4px 4px 1px 4px; background:url(../img/sy_icon_selectbox01.gif) 4px right no-repeat;}
+.SYselect02 {height:22px; padding:4px 4px 1px 4px; line-height:100%; color:#3E3290; vertical-align:middle; border:1px solid #dddddd; background:url(../img/sy_icon_selectbox01.gif) 95% 4px no-repeat;}
+.SYselect02 input {width:90%; height:12px; margin:0; padding:0; color:#3E3290; border:none; background-color:transparent;}
+.SYinput01 {vertical-align:middle; border:1px solid #ddd; height:20px; color:#000; font-size:12px; padding:2px 4px 2px 4px;}
+.SYinput02 {vertical-align:middle; border:2px solid #ddd; height:14px; color:#000; font-size:12px; padding:2px 4px 2px 4px;}
+
+.SYLayerPopupBox {position:absolute; top:0; left:0; width:100%; height:100%; background-color:#FFFFFF; filter:alpha(opacity=80);}
+.SYLayerPopup01 {position:absolute; top:expression((document.body.clientHeight/2)-86); width:418px; height:172px; text-align:center; background:#FFFFFF url(../img/sy_bg_layer_top_title_bg01.gif) repeat-x; border:3px solid #5D53A3;}
+.SYLayerPopup02 {position:absolute;  top:expression((document.body.clientHeight/2)-140); left:expression((document.body.clientWidth/2)-219); width:418px; height:126px; background:#FFFFFF url(../img/sy_bg_layer_top_title_bg01.gif) repeat-x; border:3px solid #5D53A3;}
+.SYLoadingLayerBox {position:absolute;  top:expression((document.body.clientHeight/2)-49); left:expression((document.body.clientWidth/2)-29); z-index:2009; width:172px; height:65px;}
+.SYRollOverLayer {position:absolute;  padding:3px; text-align:left; background-color:#FFF; border:1px solid #000;}
+.SYRollOverLayer p {padding:6px 6px 2px 6px}
+
+.MouseHand {cursor:pointer;}
+.SYColorBox01 {width:20px; height:18px; background-color:#7F73CF; cursor:pointer;}
+.SYIconYes01 {width:16px; height:16px; background:url(../img/sy_icon_yn01.gif) no-repeat; border:none;}
+.SYIconNo01 {width:16px; height:16px; background:url(../img/sy_icon_yn01.gif) 0 -18px no-repeat; border:none;}
+
+.SYTestIcon01 {width:15px; height:13px; background:url(../img/sy_icon_test01.gif) no-repeat; border:none;}
+.SYTipIcon01 {width:25px; height:13px; background:url(../img/sy_icon_tip01.gif) no-repeat; border:none;}
+
+
+.SYButtonContentAdd {width:48px; height:21px; background:url(../img/sy_button_add01.gif) no-repeat; border:none; cursor:pointer;}
+.SYButtonContentDel {width:48px; height:21px; background:url(../img/sy_button_delete01.gif) no-repeat; border:none; cursor:pointer;}
+
+
+.SYButtonSearch02 {width:39px; height:21px; *padding:3px 0 0 1px; _padding:3px 0 0 1px; color:#000; font:bold 12px 돋움,Dotum,AppleGothic,sans-serif;  background:url(../img/sy_btn_search_button_type02.gif) no-repeat; border:none; cursor:pointer;}
+
+
+.SYButtonType01 {width:37px; height:21px; *padding:3px 0 0 1px; _padding:3px 0 0 1px; color:#000; font-size:12px; font-family:AppleGothic,"굴림",gulim,sans-serif; background:#ff0000; border:1px solid gray; border-radius:5px; color:#ffffff; cursor:pointer;}
+.SYButtonType02 {width:37px; height:21px; *padding:3px 0 0 1px; _padding:3px 0 0 1px; color:#000; font-size:12px; font-family:AppleGothic,"굴림",gulim,sans-serif; background:url(../img/sy_btn_basic_button_type02.gif) no-repeat; border:none; cursor:pointer;}
+.SYButtonType03 {width:45px; height:21px; *padding:3px 0 0 1px; _padding:3px 0 0 1px; color:#000; font-size:12px; font-family:AppleGothic,"굴림",gulim,sans-serif; background:url(../img/sy_btn_basic_button_type03.gif) no-repeat; border:none; cursor:pointer;}
+.SYButtonType04 {width:56px; height:21px; *padding:4px 0 0 1px; _padding:4px 0 0 1px; color:#000; font-size:12px; font-family:AppleGothic,"굴림",gulim,sans-serif; letter-spacing:-1px; background:url(../img/sy_btn_basic_button_type04.gif) no-repeat; border:none; cursor:pointer;}
+.SYButtonType05 {width:68px; height:21px; *padding:4px 0 0 1px; _padding:4px 0 0 1px; color:#000; font-size:12px; font-family:AppleGothic,"굴림",gulim,sans-serif; letter-spacing:-1px; background:url(../img/sy_btn_basic_button_type05.gif) no-repeat; border:none; cursor:pointer;}
+.SYButtonType06 {width:78px; height:21px; *padding:4px 0 0 1px; _padding:4px 0 0 1px; color:#000; font-size:12px; font-family:AppleGothic,"굴림",gulim,sans-serif; letter-spacing:-1px; background:url(../img/sy_btn_basic_button_type06.gif) no-repeat; border:none; cursor:pointer;}
+.SYButtonType08 {width:100px; height:21px; *padding:4px 0 0 1px; _padding:4px 0 0 1px; color:#000; font-size:12px; font-family:AppleGothic,"굴림",gulim,sans-serif; letter-spacing:-1px; background:url(../img/sy_btn_basic_button_type08.gif) no-repeat; border:none; cursor:pointer;}
+.SYButtonType16 {width:192px; height:21px; *padding:4px 0 0 1px; _padding:4px 0 0 1px; color:#000; font-size:12px; font-family:AppleGothic,"굴림",gulim,sans-serif; letter-spacing:-1px; background:url(../img/sy_btn_basic_button_type16.gif) no-repeat; border:none; cursor:pointer;}
+
+
+.SYButtonSlim01 {width:91px; height:18px; *padding:3px 0 0 1px; _padding:3px 0 0 1px; color:#000; font-size:11px; font-family:돋움,Dotum,AppleGothic,sans-serif; letter-spacing:-1px; background:url(../img/sy_btn_slim_button_type01.gif) no-repeat; border:none; cursor:pointer;}
+.SYButtonSlim02 {width:173px; height:18px; *padding:3px 0 0 1px; _padding:3px 0 0 1px; color:#000; font-size:11px; font-family:돋움,Dotum,AppleGothic,sans-serif; letter-spacing:-1px; background:url(../img/sy_btn_slim_button_type02.gif) no-repeat; border:none; cursor:pointer;}
+
+
+.SYButtonWrite02 {width:50px; height:28px; *padding:3px 0 0 1px; _padding:3px 0 0 1px; color:#FFF; font-size:12px; font-family:돋움,Dotum,AppleGothic,sans-serif; font-weight:bold; background:url(../img/sy_btn_write_button_type02.gif) no-repeat; border:none; cursor:pointer;}
+.SYButtonCancel02 {width:50px; height:28px; *padding:3px 0 0 1px; _padding:3px 0 0 1px; color:#999; font-size:12px; font-family:돋움,Dotum,AppleGothic,sans-serif; font-weight:bold; background:url(../img/sy_btn_cancel_button_type02.gif) no-repeat; border:none; cursor:pointer;}
+.SYButtonDelete02 {width:50px; height:28px; *padding:3px 0 0 1px; _padding:3px 0 0 1px; color:#FFF; font-size:12px; font-family:돋움,Dotum,AppleGothic,sans-serif; font-weight:bold; background:red; border:none; cursor:pointer;}
+.SYButtonWrite04 {width:72px; height:28px; *padding:3px 0 0 1px; _padding:3px 0 0 1px; color:#FFF; font-size:12px; font-family:돋움,Dotum,AppleGothic,sans-serif; font-weight:bold; background:url(../img/sy_btn_write_button_type04.gif) no-repeat; border:none; cursor:pointer;}
+.SYButtonCancel04 {width:72px; height:28px; *padding:3px 0 0 1px; _padding:3px 0 0 1px; color:#999; font-size:12px; font-family:돋움,Dotum,AppleGothic,sans-serif; font-weight:bold; background:url(../img/sy_btn_admin_button_type10.gif) no-repeat; border:none; cursor:pointer;}
+
+
+.SYButtonSubmit02 {width:79px; height:36px; *padding:3px 0 0 1px; _padding:3px 0 0 1px; color:#FFF; font-size:12px; font-family:돋움,Dotum,AppleGothic,sans-serif; font-weight:bold; background-color:#bbbbbb; border:none; cursor:pointer;}
+.SYButtonSubmit03 {width:79px; height:36px; *padding:3px 0 0 1px; _padding:3px 0 0 1px; color:#FFF; font-size:12px; font-family:돋움,Dotum,AppleGothic,sans-serif; font-weight:bold; background-color:#ff0000; border:none; cursor:pointer;}
+.SYButtonSubmit04 {width:79px; height:36px; *padding:3px 0 0 1px; _padding:3px 0 0 1px; color:#FFF; font-size:12px; font-family:돋움,Dotum,AppleGothic,sans-serif; font-weight:bold; background:url(../img/sy_btn_submit_button_type04.gif) no-repeat; border:none; cursor:pointer;}
+.SYButtonSubmit08 {width:158px; height:36px; *padding:3px 0 0 1px; _padding:3px 0 0 1px; color:#FFF; font-size:12px; font-family:돋움,Dotum,AppleGothic,sans-serif; font-weight:bold; background:url(../img/sy_btn_submit_button_type04.gif); background-size: 158px 36px ;background-repeat:no-repeat;  border:none; cursor:pointer;}
+.SYButtonBack04 {width:79px; height:36px; *padding:3px 0 0 1px; _padding:3px 0 0 1px; color:#999; font-size:12px; font-family:돋움,Dotum,AppleGothic,sans-serif; font-weight:bold; background:url(../img/sy_btn_back_button_type04.gif) no-repeat; border:none; cursor:pointer;}
+.SYButtonNormal04 {width:79px; height:36px; *padding:3px 0 0 1px; _padding:3px 0 0 1px; color:#000; font-size:12px; font-family:돋움,Dotum,AppleGothic,sans-serif; font-weight:bold; background:url(../img/sy_btn_back_button_type04.gif) no-repeat; border:none; cursor:pointer;}
+
+.SYButtonBigNormal04 {width:73px; height:32px; *padding:3px 0 0 1px; _padding:3px 0 0 1px; font-size:12px; font-family:돋움,Dotum,AppleGothic,sans-serif; font-weight:bold; background:url(../img/sy_btn_admin_button_type04.gif) no-repeat; border:none; cursor:pointer;}
+
+.SYButtonReply02 {width:60px; height:45px; *padding:3px 0 0 1px; _padding:3px 0 0 1px; color:#FFF; font-size:12px; font-family:돋움,Dotum,AppleGothic,sans-serif; font-weight:bold; background:url(../img/sy_btn_reply_button_type02.gif) no-repeat; border:none; cursor:pointer;}
+
+.SYButtonExcel01  {width:100px; height:21px; background:url(../img/sy_btn_excel_down01.gif) no-repeat; border:none; cursor:pointer;}
+.SYButtonExcel02  {width:145px; height:21px; background:url(../img/sy_btn_excel_down02.gif) no-repeat; border:none; cursor:pointer;}
+.SYButtonExcel03  {width:145px; height:21px; background:url(../img/sy_btn_excel_down03.gif) no-repeat; border:none; cursor:pointer;}
+.SYButtonSelectAll01 {width:44px; height:21px; background:url(../img/sy_btn_select_all01.gif) no-repeat; border:none; cursor:pointer;}
+
+.SYButtonDelete01 {width:44px; height:21px; background:url(../img/sy_btn_delete01.gif) no-repeat; border:none; cursor:pointer;}
+.SYButtonInsert01 {width:44px; height:21px; background:url(../img/sy_btn_insert01.gif) no-repeat; border:none; cursor:pointer;}
+.SYBtnSmallDel01 {width:33px; height:16px; background:url(../img/sy_btn_small_del01.gif) no-repeat; border:none; cursor:pointer;}
+
+
+.SYBtnLogin01 {width:53px; height:22px; background:url(../img/sy_btn_login01.gif) no-repeat; border:none; cursor:pointer;}
+
+.SYSubmitBTN02 {width:35px; height:22px; background:url(../img/sy_btn_submit01.gif) no-repeat; border:none; cursor:pointer;}
+
+.SYBubdong01 {width:15px; height:15px; margin-top:-1px; background:url(../img/sy_icon_bubdong01.gif) no-repeat; border:none;}
+
+/** Board Paging **/
+
+#SYPageBox {position:relative; height:30px; margin-top:15px; padding:10px 0; text-align:center;}
+#SYPageBox .SYPageDirect {position:absolute; top:5px; right:0; width:240px; height:24px; padding:4px 5px 0 0; font-size:11px; font-family:돋움,Dotum,AppleGothic,sans-serif; text-align:right;}
+#SYPageBox .SYPageDirect .Tip {height:15px; padding:3px 0 0 30px; letter-spacing:-1px; background:url(../img/sy_icon_tip01.gif) 0 1px no-repeat;}
+#SYPageBox a.none:link { font-weight:normal; border:0px; color:#333; text-decoration:none; font-size:12px; }
+#SYPageBox a.none:visited { font-weight:normal; border:0px; color:#333; text-decoration:none; font-size:12px; }
+#SYPageBox a.none:hover { font-weight:normal; border:0px; color:#333; text-decoration:underline; font-size:12px; }
+#SYPageBox #SYPageNumber { word-spacing:0.1em; font-size:12px; font-weight:bold; margin:0 3px; height:40px; }
+#SYPageBox #SYPageNumber a, #SYPageBox #SYPageNumber b { text-decoration:none; text-align:center; padding:5px 0px 4px 5px; border:1px solid #EAEAEA; margin-right:5px;}
+#SYPageBox #SYPageNumber b { color:#000; border:1px solid #000; }
+#SYPageBox #SYPageNumber a { color:#333; }
+#SYPageBox #SYPageNumber a.none { font-weight:normal; border:0px; }
+#SYPageBox img { margin:0 3px 2px 3px; width:10px;}
+#SYPageBox #SYPageNumber a.last, #SYPageBox #SYPageNumber b.last { margin-right:5px; }
+#SYPageBox #SYPageNumber a:hover { background-color:#FFF; border:1px solid #000; }
+
+
+#SYPopupTitle {position:relative; width:100%; height:38px; *height:40px; _height:40px; color:#FFF; font:bold 13px AppleGothic,"굴림",gulim,sans-serif; text-align:left; background:url(../img/sy_bg_top_gnb_bg01.gif) repeat-x; border:1px solid #5B788F; border-right:none; border-left:none;}
+
+.bold {font-weight:bold;}
+.fNomal {font-weight:normal;}
+.SY_basic, .SY_basic a:link, .SY_basic a:visited {color:#3E3296; text-decoration:none;}
+.SY_basic a:hover{COLOR:#3E3296;text-decoration:underline}
+.SY_green, .SY_green a:link, .SY_green a:visited{COLOR:#669900; text-decoration:none;}
+.SY_green a:hover{COLOR:#669900;text-decoration:underline}
+.SY_orange, .SY_orange a:link, .SY_orange a:visited{COLOR:#FF6600; text-decoration:none;}
+.SY_orange a:hover{COLOR:#669900;text-decoration:underline}
+.SY_pink, .SY_pink a:link, .SY_pink a:visited{COLOR:#9F3B93; text-decoration:none;}
+.SY_pink a:hover{COLOR:#9F3B93;text-decoration:underline}
+.no2  { FONT-FAMILY:  "Tahoma", "Verdana", "Helvetica"; FONT-SIZE: 8pt; COLOR: #595959; TEXT-DECORATION: none }
+.count  { FONT-FAMILY:  "Tahoma", "Verdana", "Helvetica"; FONT-SIZE: 7pt; COLOR: #663333; TEXT-DECORATION: none;}
+.SY_blue, .SY_blue a:link, .SY_blue a:visited{COLOR:#0F57B8; text-decoration:none;}
+.SY_blue a:hover{COLOR:#0F57B8;text-decoration:underline}
+.SY_red, .SY_red a:link, .SY_red a:visited{COLOR:#C00B0B; text-decoration:none;}
+.SY_red a:hover{COLOR:#C00B0B;text-decoration:underline}
+.SY_none, .SY_none a:link, .SY_none a:visited{COLOR:#303030; text-decoration:none;}
+.SY_none a:hover{COLOR:#000000;text-decoration:underline}
+.SY_none2, .SY_none2 a:link, .SY_none2 a:visited{COLOR:#303030; text-decoration:none;}
+.SY_none2 a:hover{COLOR:#0F57B8;text-decoration:underline}
+
+.SY_black, .SY_black a:link, .SY_black a:visited{COLOR:#000000; text-decoration:none;}
+.SY_black a:hover{COLOR:#000000;text-decoration:underline}
+.SY_white, .SY_white a:link, .SY_white a:visited{COLOR:#FFFFFF; text-decoration:none;}
+.SY_white a:hover{COLOR:#FFFFFF;text-decoration:underline}
+.SYGray01 {color:#CCC;}
+
+.SY_SilverRed, .SY_SilverRed a:link, .SY_SilverRed a:visited{COLOR:#AE9595; text-decoration:none;}
+.SY_SilverRed a:hover{COLOR:#AE9595;text-decoration:underline}
+
+/**a:link, a:visited{COLOR:#303030; text-decoration:none;}
+a:hover{COLOR:#000000;text-decoration:underline} **/
+
+.bar {margin:0 5px; font-size:10px; color:#CCC;}
+.BoardCut {font-size:10px; letter-spacing:-2px;}
+.SYDate00 {font-family:verdana,tahoma; color:#999; font-size:10px; letter-spacing:-1px;}
+.SYDate01 {font-family:verdana,tahoma; font-size:11px; letter-spacing:-1px;}
+.SYDate02 {font-family:verdana,tahoma; font-size:12px; letter-spacing:-1px;}
+.SYDate {font-family:verdana,tahoma;}
+.SYSize00 {font-size:10px;}
+.SYSize01 {font-size:11px;}
+.SYSize02 {font-size:12px;}
+
+
+/** SY design Input **/
+.SYInputContact {background-color:#f9f9f9; border:1px solid #E9DAE7; height:22px; color:#9F3B93; font-size:12px; padding:4 4 5 4;}
+.SYInputContact2 {background-color:transparent; border:1px solid #E9DAE7; height:22px; color:#9F3B93; font-size:12px; padding:4 4 5 4;}
+.SYCheckBox01 {width:13px; height:13px; padding:0; margin-right:5px;}
+.SYSelectBox01 {height:21px; font-size:100%;}
+.SYBlackSelectBox01 {height:21px; font-family:Tahoma; font-size:100%; color:#CCC; background-color:#484848; border:1px solid #222;}
+.SYRadioStyle01 {width:12px; height:12px; margin:-2px 0px 0 5px;}
+.SYInputStyle01 {background-color:#FFF; border:1px solid #3e3e3e; height:14px; color:#303030; font-size:11px; padding:3px 4px 0 4px; background:url(../img/icon_calendar.gif)  right 3px top 2px no-repeat; cursor:pointer; }
+.SYInputStyle02 {background-color:#FFF; border:1px solid #DDD; height:16px; color:#303030; font-size:11px; padding:3px 4px 0 4px;}
+.SYTextareaStyle01 {background-color:#FFF; border:1px solid #DDD; color:#303030; font-family:"굴림",gulim,sans-serif; font-size:12px; padding:3px 4px 0 4px; overflow-x:hidden;}
+.MWTextareaStyle01 {background-color:#FFF; border:1px solid #DDD; color:#303030; font-family:"굴림",gulim,sans-serif; font-size:11px; padding:3px 4px 0 4px; overflow-x:hidden; width:98%; min-height:70px}
+
+.SYLogout01 {width:51px; height:20px; margin-top:-1px; background:url(../img/sy_btn_logout01.gif) no-repeat; cursor:pointer; border:none;}
+.SYLogout02 {width:55px; height:20px; margin-top:-1px; background-color;#ddd; cursor:pointer; border:none;}
+.SYLeftMenuClose {width:59px; height:20px; background:url(../img/sy_btn_left_menu_close01.gif) no-repeat; cursor:pointer; border:none;}
+.SYLeftMenuOpen {width:59px; height:20px; background:url(../img/sy_btn_left_menu_open01.gif) no-repeat; cursor:pointer; border:none;}
+.SYDatePrev {width:10px; height:18px; *height:15px; _height:15px; margin:0 10px; background:url(../img/sy_btn_arrow_prev02.gif) no-repeat; cursor:pointer; border:none;}
+.SYDateNext {width:10px; height:18px; *height:15px; _height:15px; margin:0 10px; background:url(../img/sy_btn_arrow_next02.gif) no-repeat; cursor:pointer; border:none;}
+.SYCalendarPrev {width:14px; height:25px; *height:21px; _height:21px; background:url(../img/sy_btn_arrow_prev01.gif) no-repeat; cursor:pointer; border:none;}
+.SYCalendarNext {width:14px; height:25px; *height:21px; _height:21px; background:url(../img/sy_btn_arrow_next01.gif) no-repeat; cursor:pointer; border:none;}
+.SYLayerCalendarPrev {width:7px; height:11px; margin:0 5px; padding:0; background:url(../img/sy_btn_arrow_prev03.gif) no-repeat; cursor:pointer; border:none;}
+.SYLayerCalendarNext {width:7px; height:11px; margin:0 5px; padding:0; background:url(../img/sy_btn_arrow_next03.gif) no-repeat; cursor:pointer; border:none;}
+
+.SYCalendar01 {width:17px; height:15px; margin:0 4px; background:url(../img/sy_icon_calendar01.gif) no-repeat; cursor:pointer; border:none;}
+
+.SYBoxStyleDelete01 {width:13px; height:12px; background:url(../img/sy_btn_box_x01.gif) no-repeat; border:none; cursor:pointer;}
+.SYButtonClose01 {width:15px; height:14px; background:url(../img/sy_btn_close01.gif) no-repeat; border:none; cursor:pointer;}
+
+
+#lightbox{position: absolute; left: 0; width: 100%; text-align: center; line-height: 0;}
+
+#lightbox a img{ border: none; }
+
+#outerImageContainer{position: relative; background-color: #ffffff;	width: 250px; height: 250px; margin: 0 auto;}
+#imageContainer{padding: 10px;	}
+#loading{position: absolute; top: 40%; left: 0%; height: 25%; width: 100%; text-align: center; line-height: 0;}
+#hoverNav{position: absolute; top: 0; left: 0; height: 100%; width: 100%;}
+#imageContainer>#hoverNav{ left: 0;}
+#hoverNav a{ outline: none;}
+#prevLink, #nextLink{width: 49%; height: 100%; background: url('../img/blank.gif') no-repeat; /* Trick IE into showing hover */ display: block}
+#prevLink { left: 0; float: left;}
+#nextLink { right: 0; float: right;}
+#prevLink:hover, #prevLink:visited:hover { background: url('../img/prevlabel.gif') no-repeat left 15%; }
+#nextLink:hover, #nextLink:visited:hover { background: url('../img/nextlabel.gif') no-repeat right 15%; }
+
+
+#imageDataContainer{ font: 10px Verdana, Helvetica, sans-serif;	background-color: #ffffff; margin: 0 auto; line-height: 1.4em; overflow: auto; width: 100%	}
+#imageData{	padding:0 10px; color: #666; }
+#imageData #imageDetails{ width: 70%; float: left; text-align: left; }	
+#imageData #caption{ font-weight: bold;	}
+#imageData #numberDisplay{ display: block; clear: left; padding-bottom: 1.0em;	}			
+#imageData #bottomNavClose{ width: 66px; float: right;  padding-bottom: 0.7em;	}	
+		
+#overlay{position:absolute;	top: 0;	left: 0; 	width: 100%; height: 500px;	background-color: #000000;}
+
+#SYOverlay{position:absolute; top:0; left:0;  width:100%; height:100%; background-color:#FFF;}
+#SYLodingOverlay{position:absolute; top:0; left:0; ; width:100%;}
+
+.SYLodingArea {padding:10px 0; color:#666; font:normal 11px 돋움,Dotum,AppleGothic,sans-serif; text-align:center;}
+.SYLodingAreaText {padding:10px 0; color:#666; font:normal 11px 돋움,Dotum,AppleGothic,sans-serif; text-align:center; border:1px solid #E5E5E5;}
+
+.SYCalendarArea {position:relative; width:0; height:0; }
+.SYLayerCalendar {position:absolute; top:-16px; left:-22px; padding:0;  background-color:#FFF; border:1px solid #DDD;}
+
+table.SYLayerCalendar td {margin:0; padding:0; border:none;}
+table.SYLayerCalendarTable width:154px; margin:7px 6px;}
+table.SYLayerCalendarTable td.Day, table.SYLayerCalendarTable td.Sun, table.SYLayerCalendarTable td.Sat, table.SYLayerCalendarTable td.Today {width:20px; height:18px; margin:0; padding:0; font-size:11px; font-family:arial,tahoma,verdana; text-align:center; cursor:pointer; border:1px solid #FFF;}
+table.SYLayerCalendarTable td.Day {color:#222;}
+table.SYLayerCalendarTable td.Sun {color:#C00B0B;}
+table.SYLayerCalendarTable td.Sat {color:#327000;}
+table.SYLayerCalendarTable td.Today {font-weight:bold; color:#FFF; background-color:#817E86; border:1px solid #6A686B;}
+.SYLayerCalendar h3 {margin:0 5px; padding:8px 0; color:#000; font-size:16px; font-family:arial,tahoma,verdana; font-weight:bold; text-align:center; border-bottom:1px solid #DDD;}
+table.SYLayerCalendarTable td.On {background-color:#EEE; border:1px solid #DDD;}
+
+/**Align**/
+.le {text-align:left}
+.ce {text-align:center}
+.ri {text-align:right}
+.va_tp {vertical-align:top}
+.va_md {vertical-align:middle}
+.va_bt  {vertical-align:bottom}
+.fl_le {float:left}
+.fl_ri {float:right}
+
+/* mwhyun */
+div.MWSearchBox {width:99%; margin:5px; border:solid 1px #eee; }
+div.MWSearchBox ul { margin-top:10px; margin-left:10px; margin-bottom:10px; }
+div.MWSearchBox li { height:30px; margin-bottom:5px;  }
+div.MWSearchBox li p {height:30px;  padding-top:5px; padding-left:5px;}
+div.MWSearchBox li p.head { width:150px; height:25px; margin-right:10px; float:left; display:inline; background:#eee; font:bold 12px "Dotum";}
+div.MWSearchBox li p.content {  float:left; display:inline;}
+
+/* mwhyun 추가 */
+#layer_confirm {position:absolute;display:none; width:600px; height:330px; border:2px solid green;background-color:#ffffff; margin:0 auto; padding:0px 5px 5px 5px}
+#layer_confirm h3{margin-top:10px;margin-bottom:3px;font-size:13px;color:red;font-weight:bold}
+
+.MWNaverConfirm {width:158px; height:36px; *padding:3px 0 0 1px; _padding:3px 0 0 1px; color:#00FF00; font-size:12px; font-family:돋움,Dotum,AppleGothic,sans-serif; font-weight:bold; background-color:#000; border:none; cursor:pointer;}
+
+dl.MwProductSelect {width:100%; float:left; display:inline}
+dl.MwProductSelect dt {width:100%; height:30px; padding-top:10px; text-align:center; border-bottom:solid 1px #eee; background:#dff4ff}
+dl.MwProductSelect dt p{font:bold 12px "dotum";}
+
+
+dl.MwProductSelect dd {float:left;}
+dl.MwProductSelect dd p{margin-top:5px;}
+dl.MwProductSelect dd.title {width:30%;  height:150px; text-align:center; }
+dl.MwProductSelect dd.contents {width:67%;  float:left; margin-left:5px; margin-top:5px; margin-bottom:5px; border-left:solid 1px #eee; }
+
+table.MwPayadd { border-collapse:collapse; border:none; width:100%;}
+table.MwPayadd th { height:20px;font:bold 12px "Dotum"; text-align:center; background:#eee;}
+table.MwPayadd td { height:18px;font:normal 12px "Dotum"; text-align:center;}
+
+
+
+.SYSearchBox01 .MwSearchBox ul {*float:left; _float:left; padding:4px 9px; overflow:hidden; border:1px solid #EEE; border-top:none;}
+.SYSearchBox01 .MwSearchBox li {float:left; width:50%; padding:4px 0 3px 0; display:inline; border-bottom:1px solid #eee;}
+.SYSearchBox01 .MwSearchBox li.oneLine {width:100%}
+.SYSearchBox01 .MwSearchBox li.twoLine {width:100%}
+.SYSearchBox01 .MwSearchBox li.noBorder {border:none;}
+
+.SYSearchBox01 .MwSearchBox li p.head {float:left; width:110px; height: 25px; padding-left:4px; padding-top:3px; font:bold 12px/25px "dotum"; background:#d8d8d8 }
+.SYSearchBox01 .MwSearchBox li p.content {float:left; height: 25px; padding-left:4px;padding-top:3px; font:normal 12px/25px "dotum";}
+.SYSearchBox01 .MwSearchBox li.twoLine p.head {height:50px;}
+.SYSearchBox01 .MwSearchBox li.twoLine p.content {height:50px; width:890px;}
+
+
+
+.SYButtonOrder {width:80px; height:21px; background:url(../img/btn-order-save.png) no-repeat; border:none; cursor:pointer;}
+.buttonOrderUp {width:21px; height:21px; background:url(../img/order_up.png) no-repeat; border:none; cursor:pointer;}
+.buttonOrderDown {width:21px; height:21px; background:url(../img/order_down.png) no-repeat; border:none; cursor:pointer;}
+.buttonModify {width:44px; height:21px; background:url(../img/btn-mwmodify.png) no-repeat; border:none; cursor:pointer;}
+.buttonReg {width:80px; height:21px; background:url(../img/btn-list-reg.png) no-repeat; border:none; cursor:pointer;}
+.buttonListSave {width:80px; height:21px; background:url(../img/btn-list-save.png) no-repeat; border:none; cursor:pointer;}
+
+.buttonUser { min-width:80px; height:21px;  border:1px solid #333; cursor:pointer; background-color:#eee; padding:0px 5px; border-radius:4px; }
+.buttonUser2 { min-width:80px; height:21px;  border:1px solid #333; cursor:pointer; background-color:#eee; padding:0px 5px; border-radius:4px;}
+
+.buttonOp1 { min-width:120px; height:21px;  border:1px solid #333; cursor:pointer; background-color:#ff8080; padding:0px 5px; border-radius:4px;}
+.buttonOp2 { min-width:120px; height:21px;  border:1px solid #333; cursor:pointer; background-color:#eee; padding:0px 5px; border-radius:4px;}
+
+
+
+.btnlistarea{position:relative; width:100%; margin-bottom:30px; }
+.btnlistarea .btnlistleft{position:relative; width:50%; float:left; display:flex; }
+.btnlistarea .btnlistleft input{margin-right:5px; }
+.btnlistarea .btnlistright{position:relative; width:50%; float:left; display:inline-block; text-align:right }
+
+
+.acc-menu {
+    position:relative;
+    list-style: none;
+    border:1px solid #eee;
+	margin-top:10px;
+}
+.acc-menu >li {
+    overflow:hidden;
+    
+    cursor:pointer;
+	border-bottom: 1px solid #eee;
+}
+
+
+.acc-menu li .main-title {
+    background-color:#fff;
+    padding:10px;
+    vertical-align:middle;
+    position:relative;
+    z-index:100;
+    text-align: left;
+}
+.acc-menu li .main-title a {
+    display: inline-block;
+    height:16px;
+    line-height:16px;
+    text-align: center;
+    vertical-align:middle;    
+	font-size: 12px;
+    font-weight: bold;
+}
+.acc-menu li .main-title .folder {
+    display: inline-block;
+    width:20px;
+    height:20px;
+    overflow:hidden;
+    line-height:20px;
+    text-align: center;
+    vertical-align:middle;
+    margin-right:5px;
+    text-indent: -100px;
+    
+	background: url(../img/ico-folder-new.png) center center/17px no-repeat;
+  
+
+}
+
+
+.acc-menu li .main-title .folder.empty {
+    background-position : 0 0;
+}
+.acc-menu li .main-title .folder.open {
+    background-position : 0 -20px;
+}
+.acc-menu li .main-title .folder.close {
+    background-position : 0 -40px;
+}
+.acc-menu li ul.sub {
+    list-style: none;
+    margin-left:25px;
+    margin-bottom:10px;
+    z-index:90;
+    position:relative;
+	
+}
+.acc-menu li ul.sub.open {
+    display:block;
+}
+.acc-menu li ul.sub.hide {
+    display:none;
+}
+.acc-menu li ul.sub li {
+    height:16px;
+    padding:10px;
+    line-height:14px;
+    vertical-align:middle;
+    cursor:pointer;
+    text-align: left;
+	font-size: 12px;
+    font-weight: bold;
+}
+.acc-menu li ul.sub li.select {
+    background-color: #ffb973;
+}
+#SYLeftArea a { color:#000000; text-decoration:none}
+#SYLeftArea a:visited { color:#000000; text-decoration:none}
+
+
+.dropbtn {
+	background-color: #fff;
+	color: #000;
+	padding: 3px 12px 3px 3px;
+	font-size: 11px;
+	border: 1px solid gray;
+	cursor: pointer;
+	width:inherit;
+
+	background:url(../img/admin/ico_arrow_down.png);
+	background-repeat: no-repeat;
+	background-position: right 4px top 3px;
+
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+	background-color: #eee;
+}
+
+.dropdown-search {
+	display: none;
+	position:absolute;
+	z-index:1;
+
+
+	width:inherit;
+	
+
+}
+/* The search field */
+.drop_input {
+	box-sizing: border-box;
+	font-size: 11px;
+	padding: 4px ;
+	outline: 1px solid #ddd;
+	min-width:50px; 
+	width:inherit;
+	margin:0 auto;
+  
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+	position: relative;
+	display: inline-block;
+	margin-right:15px;
+	margin-bottom:10px;
+	
+  
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	z-index:1000;
+
+	background-color: #f6f6f6;
+	width:inherit;
+	border: 1px solid #ddd;
+	height:150px;
+	overflow-y:scroll;
+	margin-top:25px;
+
+ 
+  
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+	color: black;
+	padding: 3px;
+	text-decoration: none;
+	display: block;
+	font-size:11px;
+	font-weight:normal;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.dropdown-show {display:block;}
+
+
+
+a { color:none; text-decoration:none; font-weight:bold;}
+a:visited { color:none; text-decoration:none;  font-weight:bold;}
+
+
+#RightUser {position:relative;min-width:160px; margin-top:10px; border:1px solid #eee;}
+#RightUser h3{padding:5px; font-size:11px;font-weight:bold; background:#eee}
+#RightUser li {text-align:left; padding:5px 0px 5px 5px}
+#RightUser li a{color:none}
+
+
+table.SYWirteTableMini {border-collapse:collapse; width:100%; font-size:11px; color:#303030; font-family:돋움,Dotum,AppleGothic,sans-serif; text-decoration:none; border:1px solid #EEE; border-top:2px solid #EEE; border-bottom:2px solid #EEE;}
+table.SYWirteTableMini tr {width:100%;}
+table.SYWirteTableMini td {height:20px; padding:2px 4px 2px 4px; border-right:1px solid #EEE; border-bottom:1px solid #EEE;}
+
+table.SYWirteTableMini td.Title {width:12%; padding-left:12px; line-height:20px; color:#333; font-weight:bold; background-color:#F9F9F9;}
+table.SYWirteTableMini td.TitleRed {width:12%; padding-left:12px; line-height:20px; color:#ff0000; font-weight:bold; background-color:#F9F9F9;}
+table.SYWirteTableMini td.Check {color:#000; background:url(../img/sy_icon_table_check01.gif) #F9F9F9 4px 45% no-repeat;}
+table.SYWirteTableMini td.Content {text-align:left;}
+table.SYWirteTableMini td.ContentHide {text-align:left; overflow:hidden;white-space: nowrap;}
+table.SYWirteTableMini td.ContentHide a{text-decoration:none; font-weight:bold; color:#000;}
+table.SYWirteTableMini td.table {margin:0; padding:0 0 0 8px;}
+table.SYWirteTableMini .bar {margin:0 5px;}
+table.SYWirteTableMini .ex01 {color:#999; font-size:11px;}
+table.SYWirteTableMini .Tip01 {padding:0 0 0 30px;  font-size:11px; text-align:left; background:url(../img/sy_icon_tip01.gif) no-repeat; margin:10px; color:red}
+table.SYWirteTableMini .comment { padding:3px 3px 3px 0px; }
+
+
+.scroll-frame {
+	position:relative;
+	width:100%;
+	height:140px;
+	overflow-y:scroll;
+	overflow-x:hidden;
+
+}
+#memo-list ul {width:100%;}
+#memo-list ul li{float:left; padding:3px; border-bottom:1px solid #eee;}
+#memo-list li.date {width:20%; color:red}
+#memo-list li.content {}
+#memo-list li.btn {width:20%; color:red}
+
+
+table.MWManagerTable01  {border-collapse:collapse; width:100%; font-size:11px; color:#303030; font-family:돋움,Dotum,AppleGothic,sans-serif; text-decoration:none; border:1px solid #E5E5E5; border-top:none;}
+table.MWManagerTable01 tr  tr {width:100%;}
+table.MWManagerTable01 td {height:21px; padding:2px; border-right:1px solid #EEE; border-bottom:1px solid #EEE;}
+table.MWManagerTable01 tr.Title  {width:100%; background:url(../img/sy_bg_table_bar01.gif) repeat-x;}
+table.MWManagerTable01 tr.Title td { text-align:center; border-right:none; border-bottom:1px solid #EEE;}
+table.MWManagerTable01 tr.Title td .On { padding-bottom:4px; color:#000; background:url(../img/sy_btn_admin_arrow01.gif) center 12px no-repeat;}
+table.MWManagerTable01 tr.Title td .Off { padding-bottom:4px; color:#000; background:url(../img/sy_btn_admin_arrow02.gif) center 12px no-repeat;}
+table.MWManagerTable01 td.none {height:90px; padding:5px 3px 2px 3px; color:#999; font-size:11px; text-align:center; border-right:1px solid #EEE; border-bottom:1px solid #EEE;}
+table.MWManagerTable01 td a {color:none;}
+table.MWManagerTable01 tr:hover {background-color:#eee;}
+
+
+.mwTab { position:relative; display:block;width:100%;float:left; clear:both;border-bottom:1px solid gray; margin-bottom:10px;}
+.mwTab ul li {position:relative;display:inline-block;max-width:250px; min-width:150px; height:20px; font-size:12px; font-weight:bold; text-align:center;padding:8px 0 0px 0  ;  border:1px solid gray; border-bottom:none; cursor:pointer; z-index:1;}
+.mwTab ul li.active { background-color:#005ca4}
+.mwTab ul li:hover { background-color:#005ca4}
+
+.mainTab { position:relative;display:block;clear:both; width:100%; min-height:33px;  margin-top:10px; border-bottom:1px solid gray;}
+.mainTab ul {float:left;}
+.mainTab li {display:inline-block;max-width:250px; min-width:180px; height:25px; font-size:13px; font-weight:bold; text-align:center; padding:7px 0px 0px 0px;  border:1px solid gray; border-bottom:none;  cursor:pointer; }
+
+.mainTab li.active { background-color:#005ca4; color:#fff;}
+.mainTab li.red {color:#fff; background-color:#ff6666}
+.mainTab li:hover { background-color:#000; color:#fff;}
+
+.subTab { position:relative;display:block;clear:both; width:100%; min-height:23px;  margin-top:10px; border-bottom:1px solid gray;}
+.subTab ul {float:left;}
+.subTab li {display:inline-block;max-width:250px; min-width:120px; height:18px; font-size:11px; font-weight:bold; text-align:center; padding:4px 0px 0px 0px;  border:1px solid gray; border-bottom:none;  cursor:pointer;}
+
+.subTab li.active { background-color:#005ca4}
+.subTab li.red {color:#fff; background-color:#ff6666}
+.subTab li:hover { background-color:#000; color:#fff;}
+
+.subTab2 { position:relative;display:block;clear:both; width:100%; min-height:23px;  margin-top:4px; border-bottom:1px solid gray;}
+.subTab2 ul {float:left;}
+.subTab2 li {display:inline-block;max-width:250px; min-width:120px; height:18px; font-size:11px; font-weight:bold; text-align:center; padding:4px 0px 0px 0px;  border:1px solid gray; border-bottom:none;  background-color:#ccc;  cursor:pointer;}
+
+.subTab2 li.active { background-color:#ddd}
+.subTab2 li.red {color:#fff; background-color:#ff6666}
+.subTab2 li:hover { background-color:#fff}
+
+
+label.radio {margin-right:10px}
+a {text-decoration:underline; color:#000;}
+.Tip {padding:0 0 0 30px;  font-size:11px; text-align:left; background:url(../img/sy_icon_tip01.gif) no-repeat; margin-top:2px;margin-bottom:10px; color:red; }
+
+
+.bgRed{background:#005ca4; color:white; border:1px solid #555; border-radius:3px;}
+.bgRedSpan{background:#005ca4; color:white; border:1px solid #eee; border-radius:2px; display:inline-block; min-width:20px;}
+
+.bgGreen{background:#60bf00; color:white; border:1px solid #555; border-radius:3px;}
+.bgGray{background:#6a6a6a; color:white; border:1px solid #555; border-radius:3px;}
+.bgBlue{background:#006fdd; color:white; border:1px solid #555; border-radius:3px;}
+
+.brdReply {width:16px; height:16px; display:inline-block;margin-left:20px;background:url(../img/reply-icon.png) center center no-repeat;}
+.MoneyOk {font-size:13px; font-weight:bold; color:#004080;}
+.MoneyNo {font-size:13px; font-weight:bold; color:#d70000;}
+
+.board_notice { display:inline-block;width:30px; height:16px; background:url(../img/icon_notice01.gif)  center center no-repeat;}
+a:link, a:visited {
+    color: black;
+}
+
+span.ico_new {display:inline-block; width:10px; height:10px; background:url(../img/admin/ic_new.gif) center center no-repeat;}
+.main_h1 {font-size:17px; font-weight:800; display:inline-block; width:90%; border-left:3px solid #3D5F7D; padding-left:5px; margin-left:10px;}
+.main_sub {width:100%; padding:3px; font-size:17px; font-weight:800; display:block;  background-color: #3D5F7D; color:#fff;}
+.main_card  { display:flex; position:relative;}
+.main_card p { width:150px; height:110px;  border-radius:20px; display:inline-block; margin:5px; position: relative; }
+.main_card p span { display: inline-block;font-size:18px; font-weight:800; line-height:25px;margin:0 auto; position: absolute;  top: 50%;  left: 40%;  margin: -25px 0 0 -33px;}
+
+.main_card  .sub { width:240px; height:100px;  border-radius:20px; display:inline-block; margin:5px; position: relative; }
+.main_card  .sub span { display: inline-block;font-size:18px; font-weight:800; line-height:25px;margin:0 auto; position: absolute;  top: 50%;  left: 40%;  margin: -25px 0 0 -13px;}
+
+.bRed { border:1px solid #ff8080; color:#fff; background-color:#ff8080; box-shadow:2px 2px 1px rgb(255 0 0 / 20%);}
+.bBlue { border:1px solid #0080c0; color:#fff; background-color:#0080c0; box-shadow:2px 2px 2px rgb(0 0 255 / 20%);}
+.bGreen { border:1px solid #00bb5e; color:#fff; background-color:#336600; box-shadow:2px 2px 2px rgb( 0 255 0 / 20%);}
+.bGrey { border:1px solid gray; color:#fff; background-color:#999999; box-shadow:2px 2px 2px rgb( 0 0 0 / 20%);}
+.bWhite { border:1px solid gray; color:#000; background-color:#ffffff; box-shadow:2px 2px 2px rgb( 0 0 0 / 20%);}
+
+
+/* calendar */
+.Calendar {width:1500px; min-height:480px;  margin: 0 auto; }
+.Calendar table {width:100%; border-collapse:collapse; margin:10px 0px;}
+.Calendar table thead td {width:14%; height:25px;  text-align:center;font-weight:bold; border-right:1px solid #ccc;border-top:1px solid #ccc; border-bottom:1px solid #ccc; background:#eee; }
+.Calendar table thead td.red {color:red; }
+.Calendar table thead td:first-child {border-left:1px solid #ccc;color:red;}
+.Calendar table thead td:last-child {border-right:1px solid #ccc;color:gray;}
+
+.Calendar table thead td.month {font-size:14px}
+.Calendar table thead td.header {background:#fff;}
+
+.Calendar table tbody td {width:14%; height:125px; color:#666; text-align:center; vertical-align:top; border-right:1px solid #ccc; border-bottom: 1px solid #ccc; }
+.Calendar table tbody td:first-child {border-left:1px solid #ccc;}
+.Calendar table tbody td:last-child {border-right:1px solid #ccc;}
+.Calendar table tbody td.last {border-right:none }
+
+.Calendar table tbody td .day-class {width:90%; height:20px; text-align:right; margin:5px; font-weight:bold; }
+.Calendar table tbody td .last {color:#aaa; }
+.Calendar table tbody td  .first {color:red }
+.Calendar table tbody td .holiday{ color:red; padding:5px; font-weight:bold; }
+.Calendar table tbody td .day-schedule a { font-size:11px; }
+
+
+
+table.statTable01  {
+	border-collapse:collapse; 
+	font-size:11px; color:#303030; 
+	font-family:돋움,Dotum,AppleGothic,sans-serif; 
+	text-decoration:none; border:1px solid #E5E5E5;
+	border-top:none;
+	
+	white-space: nowrap; 
+	width:auto;
+	overflow-x:auto;
+}
+
+table.statTable01 td {height:21px; padding:2px; border-right:1px solid #EEE; border-bottom:1px solid #EEE;}
+table.statTable01 tr.Title  {width:100%; }
+table.statTable01 tr.Title td { text-align:center;  border-bottom:1px solid #EEE; background-color:#555; color:#fff; font-weight:800;}
+table.statTable01 tr.Title td { text-align:center;  border-bottom:1px solid #EEE;}
+table.statTable01 tr.Title td .On { padding-bottom:4px; color:#000; background:url(../img/sy_btn_admin_arrow01.gif) center 12px no-repeat;}
+table.statTable01 tr.Title td .Off { padding-bottom:4px; color:#000; background:url(../img/sy_btn_admin_arrow02.gif) center 12px no-repeat;}
+table.statTable01 td.none {height:90px; padding:5px 3px 2px 3px; color:#999; font-size:11px; text-align:center; border-right:1px solid #EEE; border-bottom:1px solid #EEE;}
+table.statTable01 td a {color:none;}
+table.statTable01 tr:hover {background-color:#eee;}
+
+
+table.statTable01 tr:first-child  {border-top:1px solid #EEE; }
+
+
+
+
+/* checkbox radio switch */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 4px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #004080;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #004080;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(18px);
+  -ms-transform: translateX(18px);
+  transform: translateX(18px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 20px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.switch .text {
+display:inline-block; width:100px;  position:absolute; top:5px; left:55px 
+}
+
+
+
+
+.sigleNumber {background-color:#FFF; border:1px solid #DDD; height:16px; color:#303030; font-size:11px; padding:3px 4px 0 4px;}
+
+
+.Tip2 {
+    padding: 0px 0 0 30px;
+    font-size: 11px;
+    text-align: left;
+    background: url(../img/sy_icon_tip01.gif) no-repeat;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: red;
+}

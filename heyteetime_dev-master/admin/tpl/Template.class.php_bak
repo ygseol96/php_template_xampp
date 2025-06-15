@@ -1,0 +1,17 @@
+<?php 
+include_once $_SERVER['DOCUMENT_ROOT'].'/tpl/Template_.class.php'; 
+class Template extends Template_ 
+{ 
+   var $compile_check =true; 
+   var $compile_dir   ='/home/test12/www/tpl/_compile'; 
+   var $compile_ext   ='php'; 
+   var $skin          ='skin_ko'; 
+   var $template_dir  ='/home/test12/www/_global'; 
+   var $prefilter     ='adjustPath';
+
+   function Template($skin='') 
+   { 
+      if ($skin) $this->skin = $skin; 
+   } 
+} 
+?>

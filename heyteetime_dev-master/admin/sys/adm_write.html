@@ -1,0 +1,108 @@
+<?php
+/** ---------------------------------------------------------------
+@program : 사용자관리 등록/수정
+@description : 시스템관리  > 권한관리 > 사용자 등록/수정
+@fileinfo : /sys/adm_write.html
+@filedescription : 
+
+	admin_member
+	admin_part_menu
+	comp_jikgub
+
+@auth : 현민원
+@since : 2024.1
+------------------------------------------------------------------**/
+
+
+include_once $_SERVER['DOCUMENT_ROOT']."/inc/adm_include.php";
+
+// 권한체크
+//왼쪽메뉴 하이라이트
+$dmenu = 6;
+
+$result = get_admin_auth($dmenu);
+if($result['result']  != 'Y') {
+	alert($result['msg'], 'popup_close');
+
+}
+
+
+if(empty($_REQUEST['seq'])) {
+
+	$editmode = "admin_member_insert";
+	$data = array();
+	
+
+}
+else {
+	
+	$editmode = "admin_member_update";
+	//사용자 정보 가져오기
+	$sql = "
+		SELECT
+			*
+		FROM admin_member as a
+		where 
+			a.adm_seq = '".$_REQUEST['seq']."'
+			
+			
+	";
+
+	//write($sql);
+	$data = my_select_one($sql, $myconn);
+}
+
+
+//부서 가져오기
+$sql = "
+	select
+		cp_seq as value
+		, part_name as name
+	from comp_part
+	where
+		use_yn = 'Y'
+	order by order_no asc
+";
+$part = my_select($sql, $myconn);
+
+
+//직급 가져오기
+$sql = "
+	select
+		cj_seq as value
+		, jk_name as name
+	from comp_jikgub
+	where
+		use_yn = 'Y'
+	order by order_no asc
+";
+$jk = my_select($sql, $myconn);
+
+
+// ============= TEMPLATE START =========================//
+$tpl = new Template; 
+$tpl->skin = $_SESSION['adm_skin'];
+
+
+
+
+
+include_tpl('sys/adm_write.tpl');
+
+basic_tpl();
+
+////// 바디 입력값 설정
+$tpl->assign(array(
+	'editmode' => $editmode,
+	'data' => $data,
+	'part' => $part,
+	'jk' => $jk,
+	
+
+));
+
+// 템플릿 출력
+$tpl->print_('body'); 
+
+db_close();
+?>

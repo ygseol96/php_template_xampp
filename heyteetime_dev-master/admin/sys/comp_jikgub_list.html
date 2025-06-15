@@ -1,0 +1,100 @@
+<?php
+/** ---------------------------------------------------------------
+@program : 직급관리
+@description : 시스템관리  > 직급 리스트
+@fileinfo : /sys/comp_jikgub_list.html
+@filedescription : 
+
+	comp_jikgub
+
+@auth : 현민원
+@since : 2024.1
+------------------------------------------------------------------**/
+
+
+include_once $_SERVER['DOCUMENT_ROOT']."/inc/adm_include.php";
+
+
+//왼쪽메뉴 생성
+$leftmenu = get_admin_leftmenu("6");
+
+//왼쪽메뉴 하이라이트
+$dmenu = 8;
+
+// GNB selector
+$hgnb = 5;
+
+// 권한체크
+$result = get_admin_auth($dmenu);
+if($result['result']  != 'Y') {
+	alert($result['msg'], 'url', '/');
+
+}
+
+$_SESSION['list_url'] = getURL();
+
+
+//// 검색데이터 생성
+// 검색조건
+
+
+$s_where = " use_yn = 'Y' ";
+	
+$s_orderby = " order by a.order_no asc ";
+
+
+
+
+
+//직급 리스트 가져오기
+$sql = "
+	SELECT
+		
+		a.*,
+		case
+			when a.use_yn ='Y' then '노출' else '숨김' 
+		end as use_yn_txt
+
+	FROM comp_jikgub as a
+	where 
+		{$s_where} 
+		
+	{$s_orderby}
+
+		
+";
+
+//write($sql);
+$data = my_select($sql, $myconn);
+
+
+
+
+
+
+
+// ============= TEMPLATE START =========================//
+$tpl = new Template; 
+$tpl->skin = $_SESSION['adm_skin'];
+
+
+
+
+
+include_tpl('sys/comp_jikgub_list.tpl');
+
+basic_tpl();
+
+////// 바디 입력값 설정
+$tpl->assign(array(
+	'dmenu' => $dmenu,
+	'data' => $data,
+	
+
+));
+
+// 템플릿 출력
+$tpl->print_('body'); 
+
+db_close();
+?>

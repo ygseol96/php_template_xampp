@@ -1,0 +1,130 @@
+<?php
+/** ---------------------------------------------------------------
+@program : 직급관리
+@description : 시스템관리  > 부서별 권한관리 등록/수정
+@fileinfo : /sys/grp_auth_write.html
+@filedescription : 
+
+	comp_part
+
+@auth : 현민원
+@since : 2024.1
+------------------------------------------------------------------**/
+
+
+include_once $_SERVER['DOCUMENT_ROOT']."/inc/adm_include.php";
+
+// 권한체크
+$dmenu = 5;
+
+$result = get_admin_auth($dmenu);
+if($result['result']  != 'Y') {
+	alert($result['msg'], 'popup_close');
+
+}
+
+
+
+
+//부서별 권한 정보 가져오기
+$sql = "
+	SELECT
+		*
+	FROM comp_part as a
+	where 
+		a.cp_seq = '".$_REQUEST['seq']."'
+		
+		
+";
+
+//write($sql);
+$part = my_select_one($sql, $myconn);
+
+//부서별 권한 정보 가져오기
+$sql = "
+	SELECT
+		*
+	FROM admin_part_menu as a
+	where 
+		a.cp_seq = '".$_REQUEST['seq']."'
+		
+		
+";
+
+//write($sql);
+$data = my_select($sql, $myconn);
+
+$sql = "
+	SELECT * 
+	FROM menu_gnb
+	where
+		view_yn = 'Y'
+	order by order_no asc
+";
+$gmenu = my_select($sql, $myconn);
+$gmenu_cnt = my_count($gmenu);
+
+for($i=0; $i < $gmenu_cnt; $i++) {
+	$sql = "
+		select * from menu_snb
+		where
+			mg_seq = '".$gmenu[$i]['mg_seq']."'
+			and view_yn='Y'
+		order by order_no asc
+	";
+	$gmenu[$i]['smenu'] = my_select($sql, $myconn);
+	$row = $gmenu[$i]['smenu'];
+	$row_cnt = my_count($row);
+
+
+	for($j=0; $j < $row_cnt; $j++) {
+		$sql = "
+			select 
+				a.* ,
+				(select count(*) from admin_part_menu where cp_seq = '".$_REQUEST['seq']."' and md_seq = a.md_seq) as cnt
+			from menu_dnb as a
+			where
+				a.ms_seq = '".$row[$j]['ms_seq']."'
+				and a.view_yn = 'Y'
+			order by a.order_no asc
+		";
+		$gmenu[$i]['smenu'][$j]['dmenu'] = my_select($sql, $myconn);
+
+	}
+}
+
+//print_r($gmenu);
+
+
+$hgnb = 5;
+$lgnb = 1;
+$lsnb = 0;
+
+// ============= TEMPLATE START =========================//
+$tpl = new Template; 
+$tpl->skin = $_SESSION['adm_skin'];
+
+
+
+
+
+include_tpl('sys/grp_auth_write.tpl');
+
+basic_tpl();
+
+////// 바디 입력값 설정
+$tpl->assign(array(
+	'lgnb' => $lgnb,
+	'lsnb' => $lsnb,
+	'data' => $data,
+	'part' => $part,
+	'gmenu' => $gmenu,
+	
+
+));
+
+// 템플릿 출력
+$tpl->print_('body'); 
+
+db_close();
+?>

@@ -1,0 +1,17 @@
+@charset "utf-8";
+.TitleLogo {position:absolute; top:13px; left:58px;}
+.MemberLogo a {float:left; width:61px; height:33px; text-indent:-3000px; overflow:hidden; background:url(../img/sy_logo_title01.gif) no-repeat;}
+.BusinessLogo a {float:left; width:61px; height:33px; text-indent:-3000px; overflow:hidden; background:url(../img/sy_logo_title01.gif) 0 -36px no-repeat;}
+.CommunityLogo a {float:left; width:89px; height:33px; text-indent:-1000px; overflow:hidden; background:url(../img/sy_logo_title01.gif) 0 -72px no-repeat;}
+.ProductLogo a {float:left; width:62px; height:33px; text-indent:-1000px; overflow:hidden; background:url(../img/sy_logo_title01.gif) 0 -108px no-repeat;}
+.CodeLogo a {float:left; width:62px; height:33px; text-indent:-1000px; overflow:hidden; background:url(../img/sy_logo_title01.gif) 0 -144px no-repeat;}
+.AccountLogo a {float:left; width:61px; height:33px; text-indent:-1000px; overflow:hidden; background:url(../img/sy_logo_title01.gif) 0 -180px no-repeat;}
+.JungsanLogo a {float:left; width:61px; height:33px; text-indent:-1000px; overflow:hidden; background:url(../img/sy_logo_title01.gif) 0 -216px no-repeat;}
+
+.MemberLogoSizeS a {float:left; width:54px; height:30px; text-indent:-1000px; overflow:hidden; background:url(../img/sy_logo_title02.gif) 0 -24px no-repeat;}
+.BusinessLogoSizeS a {float:left; width:54px; height:30px; text-indent:-1000px; overflow:hidden; background:url(../img/sy_logo_title02.gif) 0 -54px no-repeat;}
+.CommunityLogoSizeS a {float:left; width:78px; height:30px; text-indent:-1000px; overflow:hidden; background:url(../img/sy_logo_title02.gif) 0 -84px no-repeat;}
+.ProductLogoSizeS a {float:left; width:55px; height:30px; text-indent:-1000px; overflow:hidden; background:url(../img/sy_logo_title02.gif) 0 -114px no-repeat;}
+.CodeLogoSizeS a {float:left; width:55px; height:30px; text-indent:-1000px; overflow:hidden; background:url(../img/sy_logo_title02.gif) 0 -144px no-repeat;}
+.AccountLogoSizeS a {float:left; width:54px; height:30px; text-indent:-1000px; overflow:hidden; background:url(../img/sy_logo_title02.gif) 0 -174px no-repeat;}
+.JungsanLogoSizeS a {float:left; width:54px; height:30px; text-indent:-1000px; overflow:hidden; background:url(../img/sy_logo_title02.gif) 0 -204px no-repeat;}

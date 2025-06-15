@@ -1,0 +1,141 @@
+<?php
+/** ---------------------------------------------------------------
+@program : 호텔코드 등록/수정
+@description : 시스템관리  > 통합코드 > 호텔코드 등록/수정
+@fileinfo : /sys/code_hotel_write.html
+@filedescription : 
+
+	code_hotel
+	
+
+
+@auth : 현민원
+@since : 2024.2
+------------------------------------------------------------------**/
+
+
+include_once $_SERVER['DOCUMENT_ROOT']."/inc/adm_include.php";
+
+// 권한체크
+//왼쪽메뉴 하이라이트
+$dmenu = 105;
+
+$result = get_admin_auth($dmenu);
+if($result['result']  != 'Y') {
+	alert($result['msg'], 'popup_close');
+
+}
+
+
+if(empty($_REQUEST['seq'])) {
+
+	$editmode = "code_hotel_insert";
+	$data = array();
+	
+
+}
+else {
+	
+	$editmode = "code_hotel_update";
+	
+	// 정보 가져오기
+	$sql = "
+		SELECT
+			*,
+			(select nat_nm_kr from code_nation where nat_cd = a.nat_cd) as nat_name
+		FROM code_hotel as a
+		where 
+			a.hotel_seq = '".$_REQUEST['seq']."'
+			
+			
+	";
+
+	//write($sql);
+	$data = my_select_one($sql, $myconn);
+
+	$data['phone_detail'] = '';
+	$data['fax_detail'] = '';
+
+	if(!empty($data['phone'])) {
+		$temp = explode(" ", $data['phone']);
+		$phone_head = str_replace("+","", $temp[0]);
+		$data['phone_tail'] = substr($data['phone'], strpos($data['phone']," ")+1);
+		
+		//echo "phone_detail = ".$data['phone_detail'];
+
+		$sql = "
+			select np_seq from code_nation_phone
+			where
+				nat_cd = '".$data['nat_cd']."'
+				and phone_code = '".$phone_head."'
+		";
+		$data['np_seq'] = my_read($sql, $myconn);
+
+	}
+
+	if(!empty($data['fax']) ) {
+		$temp = explode(" ", $data['fax']);
+		$fax_head = str_replace("+","", $temp[0]);
+
+		$data['fax_tail'] = substr($data['fax'], strpos($data['fax']," ")+1);
+
+
+		$sql = "
+			select np_seq from code_nation_phone
+			where
+				nat_cd = '".$data['nat_cd']."'
+				and phone_code = '".$fax_head."'
+		";
+		$data['np_seq_fax'] = my_read($sql, $myconn);
+
+	}
+
+
+
+}
+
+
+$keyword = array();
+
+
+//국가 - 키워드 만들기
+$sql = "
+	
+	select 
+		concat(nat_nm_kr,'(',nat_cd,')') as arr_value
+	from code_nation
+	
+
+";
+$keyword['nation'] = my_select_array_txt($sql, $myconn);
+
+
+
+
+
+// ============= TEMPLATE START =========================//
+$tpl = new Template; 
+$tpl->skin = $_SESSION['adm_skin'];
+
+
+
+
+
+include_tpl('sys/code_hotel_write.tpl');
+
+basic_tpl();
+
+////// 바디 입력값 설정
+$tpl->assign(array(
+	'editmode' => $editmode,
+	'data' => $data,
+	'keyword' => $keyword,
+	
+
+));
+
+// 템플릿 출력
+$tpl->print_('body'); 
+
+db_close();
+?>

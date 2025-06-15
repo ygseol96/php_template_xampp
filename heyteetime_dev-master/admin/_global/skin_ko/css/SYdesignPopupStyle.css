@@ -1,0 +1,183 @@
+
+
+
+
+#SYTopTitle {
+position:relative; margin:0; padding:10px; font-size:12px; font-weight:bold; background-color:#003f73; 
+color:white; cursor:pointer; border:2px solid #29252D; border-bottom:none; text-align:left
+}
+
+
+#SYListTitle {position:relative; height:22px; margin:0; padding:4px 0; font:bold 16px '나눔고딕', NanumGothic, NanumGothicOTF, '돋움', Dotum, '굴림', Gulim, AppleGothic, Sans-serif; text-align:left;}
+.Zip {height:43px; background:url(../img/sy_bg_popup_title01.gif) no-repeat;}
+.Search {height:50px; background:url(../img/sy_bg_cash_title02.gif) no-repeat;}
+.DetailBreakdown {height:43px; background:url(../img/sy_bg_popup_title02.gif) no-repeat;}
+.Recommend {height:43px; background:url(../img/sy_bg_popup_title03.gif) no-repeat;}
+.ClubAdd {height:43px; background:url(../img/sy_bg_popup_title04.gif) no-repeat;}
+
+
+#SYPopupContent {position:relative; min-height:100%; margin:0; padding:5px 0.5em 0 0.5em; border:2px solid #29252D;  overflow:hidden;}
+#SYMainContent {min-height:100%; *height:100%; _height:100%; text-align:left;}
+
+
+#SYContentTitle {height:28px; *height:38px; _height:38px; margin-bottom:15px; padding:10px 10px 0 10px; background:url(../img/sy_bg_title02.gif) repeat-x; border:1px solid #DDD; border-top:none; border-bottom:none;}
+#SYContentTitle li.title {float:left; width:475px; *width:480px; _width:480px; height:13px; *height:14px; _height:14px; padding:1px 0 0 5px; line-height:12px; *line-height:14px; _line-height:14px; font:bold 14px AppleGothic,"굴림",gulim,sans-serif; text-align:left; border-left:3px solid #3D5F7D;}
+#SYContentTitle li.navi {float:right; width:295px; height:11px; *height:14px; _height:14px; margin-top:2px; padding-top:3px; color:#999; font-size:11px; text-align:right;}
+
+#SYMainContent {margin:0; padding:0;}
+.SYMemberInfo {padding:5px; font-size:12px; color:#303030; font-family:돋움,Dotum,AppleGothic,sans-serif; background-color:#FAFAFA; border:1px solid #F5F5F5;}
+
+.SYAdvice {margin-top:10px; padding:25px 5px 5px 5px; font-size:12px; color:#303030; font-family:돋움,Dotum,AppleGothic,sans-serif; background:url(../img/sy_icon_advice01.gif) 5px 5px #FAFAFA no-repeat; border:1px solid #F5F5F5;}
+
+.SYSampleBox {position:relative; *width:100%; _width:100%; margin-top:5px; padding:15px; border:3px solid #3C5E7C;}
+.SYSampleSource {position:relative; *width:100%; _width:100%; margin-bottom:15px; padding:15px; background-color:#F9F9F9; border-bottom:2px solid #DDD;}
+
+.SYSearchBox01 {position:relative; margin-bottom:10px;}
+.SYSearchBox01 .TitleBar li.left {float:left; width:300px; height:26px; padding-top:6px; color:#666; font-weight:11px;}
+.SYSearchBox01 .TitleBar li.right {float:right; width:380px; height:26px; padding-top:0; text-align:right;}
+.SYSearchBox01 .TitleBar .title {color:#000; font-weight:bold;}
+.SYSearchBox01 .TitleBar .number {color:#000; font-family:tahoma,verdana; font-size:11px; font-weight:bold;}
+.SYSearchBox01 .TitleBar .bar {margin:0 2px; color:#666;}
+.SYSearchBox01 .SearchBox {position:relative;  width:100%; overflow:hidden;}
+.SYSearchBox01 .SearchBox ul {*float:left; _float:left; padding:4px 9px; overflow:hidden; border:1px solid #EEE; border-top:none;}
+.SYSearchBox01 .SearchBox li {float:left; width:100%; padding:4px 0 3px 0;}
+.SYSearchBox01 .SearchBox li .title {margin-right:5px; font-weight:bold;}
+.SYSearchBox01 .SearchBox li .bar {margin:0 5px;}
+.SYSearchBox01 .SearchBox li h3.Tip {padding:2px 0 0 30px; font-size:11px; text-align:left;}
+
+
+.SearchBox2 {position:relative;  width:100%; }
+.SearchBox2 ul { padding:4px 9px; height:auto; border:1px solid #EEE; border-top:none;}
+.SearchBox2 li {float:left; width:100%; padding:4px 0 3px 0;}
+.SearchBox2 li .title {margin-right:5px; font-weight:bold;}
+.SearchBox2 li .bar {margin:0 5px;}
+.SearchBox2 li h3.Tip {padding:2px 0 0 30px; font-size:11px; text-align:left;}
+
+.SYTableTopArea01 {position:relative; float:left; width:100%; height:30px; margin-top:10px; *margin:0; _margin:0; overflow:hidden; background-color:#F5F5F5;}
+.SYTableTopArea01 ul {height:26px; *height:30px; _height:30px; padding:3px 5px 0 5px; border:1px solid #E5E5E5; border-bottom:none;}
+.SYTableTopArea01 li.Left {float:left; height:26px;}
+.SYTableTopArea01 li.Right {position:absolute; top:3px; right:5px; height:26px;}
+
+.SYPopupEx {position:relative; font-size:11px; padding:10px; background-color:#FCFCFC; border-bottom:2px solid #DDD;}
+
+.SYPopupEx01 {position:relative; font-size:11px; padding:10px; background-color:#FFF;}
+.SYPopupEx01 .Tip01 {margin-top:2px; padding-left:31px; *padding-top:2px; _padding-top:2px; color:#B1B1B1; font:11px normal 돋움,Dotum,AppleGothic,sans-serif; background:url(../img/sy_icon_tip01.gif) no-repeat;}
+.SYZip01 {margin-right:5px; padding-left:15px; padding-bottom:2px; color:#33287E; font:bold 10px verdana,tahoma; letter-spacing:-1px; background:url(../img/sy_icon_zip01.gif) no-repeat;}
+.SYPopupSearchBox {position:relative; padding:10px; text-align:center; background-color:#FCFCFC; border:1px solid #DDD;}
+
+.SYZipSearchList {height:194px;  margin-top:5px; border:1px solid #DDD; border-top:none;}
+.SYZipSearchList ul {height:20px; padding-top:8px; font:11px normal 돋움,Dotum,AppleGothic,sans-serif; text-align:center; background:url(../img/sy_bg_table_bar03.gif) repeat-x;}
+.SYZipSearchList li {float:left;}
+#SYZipSearchList {position:relative; height:156px; overflow:auto; overflow-x:hidden;} 
+#SYZipSearchList table {border-collapse:collapse; width:100%; *width:; _width:; font-size:12px; color:#303030; font-family:돋움,Dotum,AppleGothic,sans-serif; text-decoration:none; table-layout:fixed;}
+#SYZipSearchList table tr {width:100%; height:35px;}
+#SYZipSearchList table td {overflow:hidden; border-left:1px solid #DDD; border-bottom:1px solid #DDD;}
+#SYZipSearchList table td.TD1 {width:60px; text-align:center; border-left:none;}
+#SYZipSearchList table td.TD2 {width:120px; text-align:left; text-indent:5px;}
+#SYZipSearchList table td.TD3 {width:100px; text-align:left; text-indent:5px;}
+#SYZipSearchList table td.TD4 {font-weight:bold; text-align:left; text-indent:5px;}
+#SYZipSearchList table td.EX1 {width:70px; text-align:center; text-indent:5px;}
+#SYZipSearchList table td.EX2 {width:60px; text-align:center; text-indent:5px;}
+#SYZipSearchList table td.EX3 {width:150px; text-align:left; text-indent:5px;}
+#SYZipSearchList table td.EX4 {width:100px; text-align:left; text-indent:5px;}
+#SYZipSearchList table td.EX5 {width:200px; text-align:left; text-indent:5px;}
+#SYZipSearchList table td.EX6 {width:80px; text-align:left; text-indent:5px;}
+
+.SYZipSearchList li.none {padding-top:75px; color:#B1B1B1; font:11px normal 돋움,Dotum,AppleGothic,sans-serif; text-align:center;}
+
+.SYPopupTable {position:relative; margin-top:10px; padding:0;}
+.Scroll {overflow:auto; overflow-y:hidden; border-left:1px solid #E5E5E5; border-right:1px solid #E5E5E5;}
+.SYManagerTable h3 {margin:15px 0 3px 0; font-size:12px; font-weight:bold;}
+.SYManagerTable02 {position:relative; float:left; width:100%; margin:5px 0 15px 0;}
+
+.SYTitle {height:15px; *height:30px; _height:30px; padding-top:15px;}
+table#SYBoardTable {border-collapse:collapse; width:100%; font-size:12px; color:#303030; font-family:돋움,Dotum,AppleGothic,sans-serif; text-decoration:none; border-top:2px solid #303030;}
+table#SYBoardTable tr {width:100%;}
+table#SYBoardTable td {height:33px; padding:0; *padding:5px 3px 5px 3px; _padding:5px 3px 5px 3px; border-bottom:1px solid #EEE;}
+
+table#SYBoardTable td.none {height:90px; padding:5px 3px 2px 3px; color:#999; font-size:11px; text-align:center; border-right:1px solid #EEE; border-bottom:1px solid #EEE;}
+table#SYBoardTable td.QnA {text-indent:10px; background:url(../img/sy_bg_ah_top_gnb_line.gif) 4px 14px no-repeat;}
+table#SYBoardTable td.QuestionOK {text-indent:50px; background:url(../img/sy_icon_question_ok01.gif) 4px 7px no-repeat;}
+table#SYBoardTable td.QuestionNo {text-indent:50px; background:url(../img/sy_icon_question_no01.gif) 4px 7px no-repeat;}
+
+table#SYBoardTable tr.TitleBar {width:100%; height:28px; color:#000; font-size:11px; background:url(../img/sy_bg_table_bar01.gif) repeat-x;}
+table#SYBoardTable tr.TitleBar td {height:27px; *height:28px; _height:28px; text-align:center; border-bottom:1px solid #EEE; border-right:none;}
+
+table#SYBoardTable tr.Title {width:100%; height:28px; color:#000; font-size:11px; background:url(../img/sy_bg_table_bar01.gif) repeat-x;}
+table#SYBoardTable tr.Title td {height:27px; *height:28px; _height:28px; border-bottom:1px solid #EEE; border-right:none;}
+
+table.SYBoardTable {border-collapse:collapse; width:100%; font-size:12px; color:#303030; font-family:돋움,Dotum,AppleGothic,sans-serif; text-decoration:none; border:1px solid #E5E5E5; border-top:none; table-layout:fixed;}
+table.SYBoardTable tr {width:100%;}
+table.SYBoardTable th {height:26px; padding:4px 0; *padding:4px 3px 4px 3px; _padding:4px 3px 4px 3px; overflow:hidden; white-space:nowrap; border-top:1px solid #E5E5E5; border-bottom:1px solid #E5E5E5; background-color:#eee }
+table.SYBoardTable td {height:26px; padding:4px 0; *padding:4px 3px 4px 3px; _padding:4px 3px 4px 3px; overflow:hidden; white-space:nowrap; border-right:1px solid #EEE; border-bottom:1px solid #EEE;}
+table.SYBoardTable tr.Title {width:100%; height:28px; color:#000; font-size:11px; background:url(../img/sy_bg_table_bar01.gif) repeat-x;}
+table.SYBoardTable tr.Title td {height:27px; *height:28px; _height:28px; text-align:center; border-bottom:1px solid #EEE; border-right:none;}
+table.SYBoardTable tr.Title td .on {height:15px; padding-bottom:4px; *padding:0; _padding:0; color:#000; background:url(../img/sy_btn_admin_arrow01.gif) center 12px no-repeat;}
+table.SYBoardTable tr.Title td .off {height:15px; padding-bottom:4px; *padding:0; _padding:0; color:#000; background:url(../img/sy_btn_admin_arrow02.gif) center 12px no-repeat;}
+table.SYBoardTable td.none {height:103px; padding:5px 3px 2px 3px; color:#999; font-size:11px; text-align:center; border-right:none; border-bottom:none;}
+table.SYBoardTable td.noBorder {border-right:none;}
+
+
+table.SYManagerTable01 td {height:auto;padding:5px 3px 5px 3px; border-right:1px solid #EEE; border-bottom:1px solid #EEE;}
+table.SYManagerTable01 td img{width:100%;}
+
+table#SYBoardTable h3 {text-indent:22px; font:bold 14px Dotum,'돋움';color:#333; letter-spacing:-1px;}
+.Question {background:url(../img/sy_icon_question01.gif) 1px 2px no-repeat;}
+
+.AnswerTitle {height:25px; *height:34px; _height:34px; padding:9px 0 0 5px; text-indent:0; font:bold 14px Dotum,'돋움';color:#333; letter-spacing:-1px; background:url(../img/sy_bg_search_box01.gif) #FAFAFA repeat-x;}
+.Answer {padding:18px 10px 10px 22px; text-indent:0; background:url(../img/sy_icon_answer01.gif) 1px 15px no-repeat;}
+.QuestionContent {padding:18px 10px 10px 22px; text-indent:0;}
+.QuestionContent .button {margin-top:15px; padding-top:10px; text-align:right; border-top:1px solid #EAEAEA;}
+
+#SYBoardTitle {height:26px; *height:36px; _height:36px; padding:8px 0 0 5px; font:bold 14px Dotum,'돋움';color:#333; letter-spacing:-1px; background:url(../img/sy_bg_search_box01.gif) #FAFAFA repeat-x; border-top:2px solid #303030;}
+#SYBoardContent {padding:10px 5px 10px 5px; border-bottom:2px solid #303030;}
+#SYBoardContent .Date, .QuestionContent .Date ,.Answer .Date {padding:20px 0 10px 0; color:#999; font:normal 11px 돋움,Dotum,AppleGothic,sans-serif;}
+
+#SYWriteButtonArea {position:relative;float:left; width:100%; padding:10px; font:normal 11px 돋움,Dotum,AppleGothic,sans-serif; background-color:#FAFAFA;}
+#SYWriteButtonArea input {position:absolute; top:4px; right:40px; *right:10px; _right:10px;}
+
+
+table.SYManagerTableWirte01 {border-collapse:collapse; width:100%; font-size:12px; color:#303030; font-family:돋움,Dotum,AppleGothic,sans-serif; text-decoration:none; border-top:2px solid #303030; border-bottom:2px solid #303030;}
+table.SYManagerTableWirte01 tr {width:100%;}
+table.SYManagerTableWirte01 td {height:26px; *height:36px; _height:36px; padding:4px 8px 5px 8px; border-bottom:1px solid #EEE;}
+
+table.SYManagerTableWirte01 td.title {width:60px; padding-left:12px; line-height:26px; font-size:11px; font-weight:bold; background-color:#F9F9F9;}
+table.SYManagerTableWirte01 .check {background:url(../img/sy_icon_check01.gif) 4px 13px #F8FBFE no-repeat;}
+table.SYManagerTableWirte01 td.content {}
+table.SYManagerTableWirte01 td.table {margin:0; padding:0 0 0 8px;}
+table.SYManagerTableWirte01 .bar {margin:0 5px;}
+table.SYManagerTableWirte01 .ex01 {color:#999; font-size:11px;}
+.SYImageArea {position:absolute; top:1px; right:0; width:198px; *width:200px; _width:200px; height:179px; *height:182px; _height:182px; text-align:center; background-color:#fff; border:1px solid #EEE;}
+.SYImageArea h3 {position:relative; width:190px; height:150px; margin:0 auto;}
+
+.SYManagerTable .TableBG01 {background-color:#FFFFFF}
+.SYManagerTable .TableBG02 {background-color:#F9F9F9}
+.SYManagerTable .TableBG03 {background-color:#FBFBFB}
+.SYManagerTable .TableBG04 {background-color:#F8FCFD}
+.SYManagerTable .TableBG05 {background-color:#EEEEEE}
+
+.SYAgency {padding:4px 0; overflow:hidden; color:#FFF; font-weight:bold; text-indent:4px;}
+
+table.SYNoTable01 {border-collapse:collapse; width:100%; font-size:12px; color:#303030; font-family:돋움,Dotum,AppleGothic,sans-serif; text-decoration:none; border:none;}
+table.SYNoTable01 td {height:28px; padding:4px 3px 2px 3px; border:none;}
+
+
+.SYButtonArea {margin:15px 0 20px 0; text-align:center;}
+
+#SYFooter {position:relative; margin:20px 0.5em 10px 0.5em; padding-top:10px; text-align:center; border-top:2px solid #DDD;}
+#SYFooter ul.menu {COLOR:#666; LINE-HEIGHT: 1.6em;font:normal 11px "Tahoma", "Verdana", "Helvetica", dotum, sans-serif;}
+#SYFooter ul.menu a:link,#SYFooter ul.menu a:visited  {color:#303030; text-decoration:none;}
+#SYFooter ul.menu a:hover {color:#000000; text-decoration:underline; }
+#SYFooter ul{list-style:none; margin:0; padding:0;}
+#SYFooter ul.line {clear:both; width:1000px; height:30px; margin:0 auto 5px auto; padding:0; font:normal 11px "Tahoma", "Verdana", "Helvetica", dotum, sans-serif; color:#666; LINE-HEIGHT: 1.6em;}
+#SYFooter ul.line li {margin:0; padding:7px 0 0 0;}
+#SYFooter ul.line a:link,#SYFooter ul.line a:visited  {color:#303030; text-decoration:none;}
+#SYFooter ul.line a:hover { color:#990000; text-decoration:underline; }
+#SYFooter ul.copy{margin:0; padding:0; font:normal 10px "Tahoma", "Verdana", "Helvetica", dotum, sans-serif; color:#666;}
+
+
+.popLayer {z-index:1004;width:40%;  background-color:white;display:none }
+
+
+
+

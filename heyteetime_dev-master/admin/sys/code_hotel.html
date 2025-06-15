@@ -1,0 +1,207 @@
+<?php
+/** ---------------------------------------------------------------
+@program : 국가코드
+@description : 시스템관리  > 호텔관리 리스트
+@fileinfo : /sys/code_hotel.html
+@filedescription : 
+
+@auth : 현민원
+@since : 2024.1
+------------------------------------------------------------------**/
+
+
+include_once $_SERVER['DOCUMENT_ROOT']."/inc/adm_include.php";
+include_once $_SERVER['DOCUMENT_ROOT']."/inc/lib/paging.php";
+
+
+
+//왼쪽메뉴 생성
+$leftmenu = get_admin_leftmenu("6");
+
+
+
+//gnb selector
+$hgnb = 5;
+
+
+//왼쪽메뉴 하이라이트
+$dmenu = 105;
+
+// 권한체크
+$result = get_admin_auth($dmenu);
+if($result['result']  != 'Y') {
+	alert($result['msg'], 'url', '/');
+
+}
+
+$_SESSION['list_url'] = getURL();
+
+
+
+// paging param
+if(empty($_REQUEST['s_viewCount'])) $_REQUEST['s_viewCount'] = "30";
+if(empty($_REQUEST['s_page_block'])) $_REQUEST['s_page_block'] = "10";
+if(empty($_REQUEST['s_orderby'])) $_REQUEST['s_orderby'] = "1";
+if(empty($_REQUEST['s_admin'])) $_REQUEST['s_admin'] = "";
+if(empty($_REQUEST['s_keyfield'])) $_REQUEST['s_keyfield'] = "";
+
+$PageStr ="";
+$Paging ="";
+
+
+
+
+
+//// 검색데이터 생성
+
+// 검색조건
+$s_where =" 1  ";
+if(empty($_REQUEST['s_use_yn'])) $_REQUEST['s_use_yn'] ='Y';
+
+if(!empty($_REQUEST['s_view_yn'])) {
+	$s_where .= " AND a.view_yn = '".$_REQUEST['s_view_yn']."' ";
+}
+
+if(!empty($_REQUEST['s_use_yn'])) {
+	if($_REQUEST['s_use_yn'] != 'ALL') {
+		$s_where .= " AND a.use_yn = '".$_REQUEST['s_use_yn']."' ";
+	}
+}
+
+
+if($_REQUEST['s_keyfield']) {
+			
+			$s_where .= " 
+			AND (
+				a.nat_nm_kr like '%".$_REQUEST['s_keyfield']."%' or
+				a.nat_nm_en like '%".$_REQUEST['s_keyfield']."%' or
+				a.nat_nm_jp like '%".$_REQUEST['s_keyfield']."%' or
+				a.nat_nm_cn like '%".$_REQUEST['s_keyfield']."%' or
+				a.nat_cd like '%".$_REQUEST['s_keyfield']."%' 
+			)
+			";			
+			
+}
+
+
+//couting
+$sql = "
+	SELECT
+		count(*)
+	FROM code_hotel as a
+		
+			
+	where 
+		{$s_where}
+
+";
+//write($sql);
+
+$cnt = my_read($sql, $myconn);
+
+$data = array();
+
+$mwPaging = new mwPaging($_REQUEST['s_viewCount'], $_REQUEST['s_page_block']);
+$mwPaging->Set($cnt);	// select count(*) .. 리스팅 카운트한 갯수
+
+if($cnt > 0 ) {
+	
+	
+	$s_limit = " limit ".$mwPaging->GetStartPos().", ".$_REQUEST['s_viewCount'];
+
+	switch($_REQUEST['s_orderby']) {
+		case "1" :
+			$s_orderby = " order by a.hotel_seq desc ";
+			break;
+
+		case "2" :
+			$s_orderby = " order by a.hotel_seq asc ";
+			break;
+
+		case "3" :
+			$s_orderby = " order by a.nat_nm_kr asc ";
+			break;
+
+		case "4" :
+			$s_orderby = " order by a.nat_nm_kr desc ";
+			break;
+		
+		default :
+			$s_orderby = " order by a.hotel_seq desc ";
+			break;
+	}
+
+
+	
+
+	$sql = "
+		SELECT
+			a.*
+			, a.hotel_seq as seq
+			, case
+				when view_yn ='Y' then '노출'
+				when view_yn ='N' then '미노출'
+			end as view_yn_txt
+			, (select nat_nm_kr from code_nation where nat_cd = a.nat_cd ) as nat_name
+
+		FROM code_hotel as a
+		where 
+			{$s_where}
+			{$s_orderby}
+			-- {$s_limit}
+	";
+
+	//write($sql);
+	$data = my_select($sql, $myconn);
+	$data_cnt = my_count($data); 
+	for($i=0; $i < $data_cnt; $i++) {
+		
+	
+		
+		
+	}
+
+	
+	//페이징 뷰
+	$PageStr = $mwPaging->PrintHidden();
+	$Paging = $mwPaging->Show("schForm","get");
+
+
+
+}
+
+
+
+
+
+
+// ============= TEMPLATE START =========================//
+$tpl = new Template; 
+$tpl->skin = $_SESSION['adm_skin'];
+
+
+
+
+
+include_tpl('sys/code_hotel.tpl');
+
+basic_tpl();
+
+////// 바디 입력값 설정
+$tpl->assign(array(
+	'dmenu' => $dmenu,
+	
+	
+	'TotalCnt'	=> $cnt,
+	'data'=>$data,
+	'PageStr'=>$PageStr,
+	'Paging'=>$Paging,
+	'mwPaging'=>$mwPaging,
+
+));
+
+// 템플릿 출력
+$tpl->print_('body'); 
+
+db_close();
+?>

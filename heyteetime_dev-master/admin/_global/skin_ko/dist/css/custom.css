@@ -1,0 +1,101 @@
+
+
+body {color:#1a1a1a; }
+
+/* 폼 */
+/* .custom_select input {display:none; } */
+.custom_select input + label {cursor:pointer; }
+/* .custom_select input:checked + label {background-color:rgba(var(--color-primary) / 0.2); } */
+
+.dropdown-menu .dropdown-content {max-height:50vh; overflow-y:auto; }
+
+/* 페이저 */
+.pager button:disabled svg {color:#8d8d8d; }
+
+/* 테이블 */
+.table.table-hover tr:hover td {background-color: rgb(var(--color-slate-50) / var(--tw-bg-opacity));}
+.table tr.bg-primary:hover td {background-color:inherit; }
+
+/* 탭 */
+.nav.nav-boxed-tabs .nav-item .nav-link {box-shadow:none; border-radius:0; }
+.nav.nav-boxed-tabs .nav-item .nav-link:disabled {background:rgb(var(--color-slate-100) / var(--tw-bg-opacity)); color:rgb(var(--color-slate-500))}
+
+.nav.nav-link-tabs .nav-item .nav-link {border-bottom-color:rgb(var(--color-slate-200) / var(--tw-bg-opacity)); }
+
+.tab-content > div {width:100% !important; }
+
+/* 말줄임표 */
+.truncate-4 {-webkit-line-clamp: 4; display: -webkit-box; word-wrap: break-word;-webkit-box-orient: vertical; text-overflow: ellipsis; overflow: hidden;}
+.truncate-3 {-webkit-line-clamp: 3; display: -webkit-box; word-wrap: break-word;-webkit-box-orient: vertical; text-overflow: ellipsis; overflow: hidden;}
+
+ 
+
+/* 테이블부분 */
+.tabulator .tabulator-header {text-align:left; }
+.tabulator .tabulator-header br {display:none; }
+.table-report.table-report--tabulator .tabulator-header .tabulator-headers .tabulator-col .tabulator-col-content .tabulator-col-title br {display:block; }
+.tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort="none"] .tabulator-col-content .tabulator-col-sorter {
+    color: #bbb;
+}
+.tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort="none"] .tabulator-col-content .tabulator-col-sorter .tabulator-arrow {
+    border-top: none;
+    border-bottom: 6px solid #bbb;
+}
+.tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort="ascending"] .tabulator-col-content .tabulator-col-sorter {
+    color: #666;
+}
+.tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort="ascending"] .tabulator-col-content .tabulator-col-sorter .tabulator-arrow {
+    border-top: none;
+    border-bottom: 6px solid #666;
+}
+.tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort="descending"] .tabulator-col-content .tabulator-col-sorter {
+    color: #666;
+}
+.tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort="descending"] .tabulator-col-content .tabulator-col-sorter .tabulator-arrow {
+    border-bottom: none;
+    border-top: 6px solid #666;
+    color: #666;
+}
+.tabulator .tabulator-header .tabulator-headers .tabulator-col .tabulator-col-content,
+.tabulator .tabulator-row .tabulator-cell {
+    padding-left:0.45rem; 
+    padding-right:0.45rem; 
+}
+.tabulator-row .tabulator-cell *:not(br) {display: inline-block; vertical-align:middle; width:100%; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;}
+.tabulator-row .tabulator-cell button {width:auto; }
+.tabulator-row .tabulator-cell input[type="checkbox"] {width:16px; height:16px; }
+.tabulator-row .tabulator-cell:after {content:''; display:inline-block; vertical-align:middle; width:0; height:100%; }
+
+/* zoom */
+.zoom-70 {zoom:0.7; }
+
+/* width */
+@media (min-width:768px){
+    .md\:w-calc-40 {width:calc(100% - 10rem); }
+}
+
+/* 테이블 */
+.table.table-sm td {padding-right:0.5rem; padding-left:0.5rem; }
+
+/* swiper */
+.swiper-button-next:after, .swiper-button-prev:after {font-size:26px; font-weight:900; }
+.swiper-button-next {right:0px; }
+.swiper-button-prev {left:0px; }
+
+/* 톰셀렉트 커스텀 */
+.tom-select.multi .ts-input{padding-right: 1.8rem;}
+.tom-select .ts-dropdown.plugin-dropdown_input .dropdown-input-wrap{display: none!important;}
+.tom-select .select-all {background:none!important}
+.tom-select .select-all > a{display: none!important;}
+.tom-select .ts-input > input {display: none!important;}
+
+.select-all {pointer-events:none; }
+
+/* litepicker 커스터마이징 */
+.litepicker .container__months .month-item-header div > .month-item-name, .litepicker .container__months .month-item-header div > .month-item-year{
+    padding-top: 0.25rem!important;
+    padding-bottom: 0.25rem!important;
+    padding-left: 0.5rem!important;
+    padding-right: 2rem!important;
+}
+

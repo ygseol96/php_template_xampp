@@ -1,0 +1,239 @@
+<?php
+/** ---------------------------------------------------------------
+@program : 표준공항코드 
+@description : 시스템관리  > 표준공항코드 리스트
+@fileinfo : /sys/code_airport_list.html
+@filedescription : 
+
+@auth : 현민원
+@since : 2024.1
+------------------------------------------------------------------**/
+
+
+include_once $_SERVER['DOCUMENT_ROOT']."/inc/adm_include.php";
+include_once $_SERVER['DOCUMENT_ROOT']."/inc/lib/paging.php";
+
+
+
+//왼쪽메뉴 생성
+$leftmenu = get_admin_leftmenu("6");
+
+//왼쪽메뉴 하이라이트
+$dmenu = 98;
+
+//gnb selector
+$hgnb = 5;
+
+// 권한체크
+$result = get_admin_auth($dmenu);
+if($result['result']  != 'Y') {
+	alert($result['msg'], 'url', '/');
+
+}
+
+$_SESSION['list_url'] = getURL();
+
+
+
+// paging param
+if(empty($_REQUEST['s_viewCount'])) $_REQUEST['s_viewCount'] = "30";
+if(empty($_REQUEST['s_page_block'])) $_REQUEST['s_page_block'] = "10";
+if(empty($_REQUEST['s_orderby'])) $_REQUEST['s_orderby'] = "1";
+if(empty($_REQUEST['s_nat'])) $_REQUEST['s_nat'] = "";
+if(empty($_REQUEST['s_keyfield'])) $_REQUEST['s_keyfield'] = "";
+
+$PageStr ="";
+$Paging ="";
+
+
+
+
+
+//// 검색데이터 생성
+
+//국가 가져오기
+$sql = "
+	select
+		nat_cd as value
+		, nat_nm_kr as name
+	from code_nation
+	order by nat_nm_kr asc
+	
+";
+$nation = my_select($sql, $myconn);
+
+
+//검색키워드 만들기
+$sql = "
+	
+	(select airport_nm_kr as arr_value
+	from code_airport)
+	union all
+	(
+	select airport_nm_en as arr_value
+	from code_airport
+	)
+	union all
+	(
+	select airport_nm_keyword as arr_value
+	from code_airport
+	)
+	
+
+";
+$schkey = my_select_array_txt($sql, $myconn);
+//echo "key= $schkey ";
+//exit;
+/*
+$schkeyword = array();
+for($i=0; $i < my_count($schkey);$i++) {
+	$schkeyword[]= $schkey[$i]['schkey'];
+}
+*/
+
+//echo $schkey;
+
+
+// 검색조건
+$s_where =" use_yn ='Y'  ";
+
+
+if(!empty($_REQUEST['s_nat'])) {
+	$s_where .= " AND a.nat_cd = '".$_REQUEST['s_nat']."' ";
+}
+
+
+if($_REQUEST['s_keyfield']) {
+		
+	$s_where .= " 
+		AND (  
+			a.airport_code like '%".$_REQUEST['s_keyfield']."%' or
+			a.airport_nm_kr like '%".$_REQUEST['s_keyfield']."%' or
+			a.airport_nm_en like '%".$_REQUEST['s_keyfield']."%' or
+			a.airport_nm_jp like '%".$_REQUEST['s_keyfield']."%' or
+			a.airport_nm_cn like '%".$_REQUEST['s_keyfield']."%' or
+			a.airport_nm_keyword like '%".$_REQUEST['s_keyfield']."%' 
+		)
+
+	";			
+			
+}
+
+
+//couting
+$sql = "
+	SELECT
+		count(*)
+	FROM code_airport as a
+		
+			
+	where 
+		{$s_where}
+
+";
+//write($sql);
+
+$cnt = my_read($sql, $myconn);
+
+$data = array();
+
+$mwPaging = new mwPaging($_REQUEST['s_viewCount'], $_REQUEST['s_page_block']);
+$mwPaging->Set($cnt);	// select count(*) .. 리스팅 카운트한 갯수
+
+if($cnt > 0 ) {
+	
+	
+	$s_limit = " limit ".$mwPaging->GetStartPos().", ".$_REQUEST['s_viewCount'];
+
+	switch($_REQUEST['s_orderby']) {
+		case "1" :
+			$s_orderby = " order by a.airp_seq desc ";
+			break;
+
+		case "2" :
+			$s_orderby = " order by a.airp_seq asc ";
+			break;
+
+		case "3" :
+			$s_orderby = " order by a.airport_nm_kr asc ";
+			break;
+
+		case "4" :
+			$s_orderby = " order by a.airport_nm_kr desc ";
+			break;
+		
+		default :
+			$s_orderby = " order by a.airp_seq desc ";
+			break;
+	}
+
+
+	
+
+	$sql = "
+		SELECT
+			a.*
+			, case
+				when view_yn ='Y' then '노출'
+				when view_yn ='N' then '미노출'
+			end as view_yn_txt
+			, (select nat_nm_kr from code_nation where nat_cd = a.nat_cd ) as nat_name
+			, (select city_nm_kr from code_city where city_code = a.city_code ) as city_name
+
+		FROM code_airport as a
+		where 
+			{$s_where}
+			{$s_orderby}
+			{$s_limit}
+	";
+
+	//write($sql);
+	$data = my_select($sql, $myconn);
+	$data_cnt = my_count($data); 
+	
+	
+	//페이징 뷰
+	$PageStr = $mwPaging->PrintHidden();
+	$Paging = $mwPaging->Show("schForm","get");
+
+
+
+}
+
+
+
+
+
+
+// ============= TEMPLATE START =========================//
+$tpl = new Template; 
+$tpl->skin = $_SESSION['adm_skin'];
+
+
+
+
+
+include_tpl('sys/code_airport_list.tpl');
+
+basic_tpl();
+
+////// 바디 입력값 설정
+$tpl->assign(array(
+	'dmenu' => $dmenu,
+	'nation' => $nation,
+	'schkey' => $schkey,
+	
+	
+	'TotalCnt'	=> $cnt,
+	'data'=>$data,
+	'PageStr'=>$PageStr,
+	'Paging'=>$Paging,
+	'mwPaging'=>$mwPaging,
+
+));
+
+// 템플릿 출력
+$tpl->print_('body'); 
+
+db_close();
+?>

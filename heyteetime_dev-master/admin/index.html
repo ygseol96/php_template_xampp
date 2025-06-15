@@ -1,0 +1,49 @@
+<?php
+/** ---------------------------------------------------------------
+@program : 어드민 인덱스
+@description : 메인
+@fileinfo : /index.html
+@filedescription : 
+
+@auth : 현민원
+@since : 2024.1
+------------------------------------------------------------------**/
+//$_NO_LOGIN = true;
+
+
+include_once $_SERVER['DOCUMENT_ROOT']."/inc/adm_include.php";
+
+
+//$gnb = 0;
+//$snb = 0;
+
+
+// ============= TEMPLATE START =========================//
+$tpl = new Template;
+
+$tpl->define(array(
+	//'main_left'=> 'main_left.tpl',			
+)); 
+include_tpl('index.tpl');
+
+basic_tpl();
+
+////// 바디 입력값 설정
+
+$tpl->assign(array(
+	
+
+	//'gnb'=>$gnb,
+	//'snb'=>$snb,
+	
+	
+));
+
+
+
+
+// 템플릿 출력
+$tpl->print_('body'); 
+
+db_close();
+?>

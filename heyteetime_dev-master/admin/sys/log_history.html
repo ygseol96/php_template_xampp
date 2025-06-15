@@ -1,0 +1,206 @@
+<?php
+/** ---------------------------------------------------------------
+@program : 시스템 로그
+@description : 시스템관리  > 시스템 로그 리스트
+@fileinfo : /sys/log_history.html
+@filedescription : 
+
+@auth : 현민원
+@since : 2024.1
+------------------------------------------------------------------**/
+
+
+include_once $_SERVER['DOCUMENT_ROOT']."/inc/adm_include.php";
+include_once $_SERVER['DOCUMENT_ROOT']."/inc/lib/paging.php";
+
+
+
+//왼쪽메뉴 생성
+$leftmenu = get_admin_leftmenu("6");
+
+//왼쪽메뉴 하이라이트
+$dmenu = 96;
+
+//gnb selector
+$hgnb = 5;
+
+// 권한체크
+$result = get_admin_auth($dmenu);
+if($result['result']  != 'Y') {
+	alert($result['msg'], 'url', '/');
+
+}
+
+$_SESSION['list_url'] = getURL();
+
+
+
+// paging param
+if(empty($_REQUEST['s_viewCount'])) $_REQUEST['s_viewCount'] = "30";
+if(empty($_REQUEST['s_page_block'])) $_REQUEST['s_page_block'] = "10";
+if(empty($_REQUEST['s_orderby'])) $_REQUEST['s_orderby'] = "1";
+if(empty($_REQUEST['s_admin'])) $_REQUEST['s_admin'] = "";
+if(empty($_REQUEST['s_keyfield'])) $_REQUEST['s_keyfield'] = "";
+
+$PageStr ="";
+$Paging ="";
+
+
+
+
+
+//// 검색데이터 생성
+
+//사용자 가져오기
+$sql = "
+	SELECT
+		a.adm_seq AS value
+		, CONCAT(adm_name,'(', adm_id ,') - ',  (SELECT part_name FROM comp_part WHERE cp_seq = a.adm_part_seq)  ) AS name
+	FROM admin_member  AS a		
+	WHERE
+		use_yn = 'Y'
+	ORDER BY a.adm_name ASC
+";
+//write($sql);
+$admin_member = my_select($sql, $myconn);
+
+
+
+// 검색조건
+$s_where =" 1  ";
+
+if(empty($_REQUEST['s_sdate'])) $_REQUEST['s_sdate'] = date("Y-m-d");
+if(empty($_REQUEST['s_edate'])) $_REQUEST['s_edate'] = date("Y-m-d");
+
+$s_where .= " and a.regdt between  '".$_REQUEST['s_sdate']." 00:00:00' and '".$_REQUEST['s_edate']." 23:59:59' ";
+
+
+if(!empty($_REQUEST['s_adm'])) {
+	$s_where .= " AND a.adm_seq = '".$_REQUEST['s_adm']."' ";
+}
+
+
+
+//couting
+$sql = "
+	SELECT
+		count(*)
+	FROM log_admin as a
+		
+			
+	where 
+		{$s_where}
+
+";
+//write($sql);
+
+$cnt = my_read($sql, $myconn);
+
+$data = array();
+
+$mwPaging = new mwPaging($_REQUEST['s_viewCount'], $_REQUEST['s_page_block']);
+$mwPaging->Set($cnt);	// select count(*) .. 리스팅 카운트한 갯수
+
+if($cnt > 0 ) {
+	
+	
+	$s_limit = " limit ".$mwPaging->GetStartPos().", ".$_REQUEST['s_viewCount'];
+
+	switch($_REQUEST['s_orderby']) {
+		case "1" :
+			$s_orderby = " order by a.regdt desc ";
+			break;
+
+		case "2" :
+			$s_orderby = " order by a.regdt asc ";
+			break;
+
+		
+		default :
+			$s_orderby = " order by a.regdt desc ";
+			break;
+	}
+
+
+	
+
+	$sql = "
+		SELECT
+			a.*
+			
+			, (
+				SELECT 
+					CONCAT( (SELECT part_name FROM comp_part WHERE cp_seq = aa.adm_part_seq),' - ', aa.adm_name, '(', aa.adm_id,') ')				FROM admin_member AS aa
+				WHERE
+					aa.adm_seq = a.adm_seq
+			)AS adm_name
+			,  ( SELECT
+				CONCAT(aa.mg_title, ' > ', bb.sg_title, ' > ', cc.dg_title) nav
+				FROM menu_gnb AS aa
+					INNER JOIN menu_snb AS bb ON aa.mg_seq = bb.mg_seq
+					INNER JOIN menu_dnb AS cc ON bb.ms_seq = cc.ms_seq
+				WHERE
+					cc.md_seq = a.md_seq ) as nav
+
+		FROM log_admin as a
+		where 
+			{$s_where}
+			{$s_orderby}
+			{$s_limit}
+	";
+
+	//write($sql);
+	$data = my_select($sql, $myconn);
+	$data_cnt = my_count($data); 
+	for($i=0; $i < $data_cnt; $i++) {
+		
+	
+		
+		
+	}
+
+	
+	//페이징 뷰
+	$PageStr = $mwPaging->PrintHidden();
+	$Paging = $mwPaging->Show("schForm","get");
+
+
+
+}
+
+
+
+
+
+
+// ============= TEMPLATE START =========================//
+$tpl = new Template; 
+$tpl->skin = $_SESSION['adm_skin'];
+
+
+
+
+
+include_tpl('sys/log_history.tpl');
+
+basic_tpl();
+
+////// 바디 입력값 설정
+$tpl->assign(array(
+	'dmenu' => $dmenu,
+	'admin_member' => $admin_member,
+	
+	
+	'TotalCnt'	=> $cnt,
+	'data'=>$data,
+	'PageStr'=>$PageStr,
+	'Paging'=>$Paging,
+	'mwPaging'=>$mwPaging,
+
+));
+
+// 템플릿 출력
+$tpl->print_('body'); 
+
+db_close();
+?>

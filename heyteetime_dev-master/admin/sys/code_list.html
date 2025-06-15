@@ -1,0 +1,70 @@
+<?php
+/** ---------------------------------------------------------------
+@program : 사용자
+@description : 시스템관리  > 사용자 리스트
+@fileinfo : /sys/adm_list.html
+@filedescription : 
+
+@auth : 현민원
+@since : 2024.1
+------------------------------------------------------------------**/
+
+
+include_once $_SERVER['DOCUMENT_ROOT']."/inc/adm_include.php";
+
+$msconn = msConn();
+
+$sql = "
+	SELECT 
+		TOP 10 *
+	FROM ai_cd_airport
+";
+
+
+$row = ms_select($sql, $msconn);
+//print_r($row);
+
+$sql = "
+	SELECT count(*) as cnt
+  FROM  ai_cd_airport
+";
+
+$cnt = ms_read($sql, $msconn);
+echo "cnt = $cnt ";
+
+
+$sql = "
+	SELECT count(*) as cnt
+  FROM  ai_cd_area
+";
+
+$cnt = ms_read($sql, $msconn);
+echo "cnt = $cnt ";
+
+
+$sql = "
+	insert into MWH_table3 (col1, col2)
+	values('1',N'阿拉伯联合酋长国')
+	
+";
+
+$rt = ms_query($sql, $msconn);
+
+$idx = ms_insert_id($msconn);
+
+echo "new insert idx = ".$idx;
+/*
+
+$sql = "
+	update MWH_table1
+	set
+		col2 ='5551111'
+	where
+		mwh_id = '4'
+";
+$rt = ms_query($sql, $msconn);
+//print_r($rt);
+*/
+
+ms_close();
+?>

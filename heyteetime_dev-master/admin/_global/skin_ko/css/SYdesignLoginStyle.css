@@ -1,0 +1,15 @@
+@charset "utf-8";
+#SYLoginBody {position:relative; width:100%; text-align:center; background:url(/_global/img/sy_bg_login_body01.gif) repeat-x;}
+#SYLoginContent {position:relative; width:1200px; height:443px; margin:0 auto; padding:0; }
+.SYLoginLeftArea {position:relative; float:left; width:250px; height:443px; left:-150px;background:url(/_global//img/sy_bg_login_left01.gif) no-repeat;}
+.SYLoginRightArea {position:relative; float:left; width:600px; height:443px; background:url(/_global//img/logo-gg-logo2.png) right bottom no-repeat;}
+.SYLoginRightArea2 {position:relative; float:left; top:-180px; left:-150px; width:600px; height:443px; }
+
+.SYLoginBox {position:relative; width:250px; height:240px; margin:0; padding:0;}
+.SYLoginBox ul {position:relative; width:250px; height:194px; top:120px;}
+.SYLoginBox ul li.input {position:absolute; top:20px; left:20px; width:150px; height:50px; text-align:left;}
+.SYLoginBox ul li.btn {position:absolute; top:21px; right:22px; width:60px; height:50px;}
+.SYLoginBox ul li.text {position:absolute; top:80px; left:20px; width:250px; height:20px; font-size:11px; color:#666;}
+.SYLoginBox ul li.text .SignUp {color:#222; font-weight:bold;}
+.SYInputID {width:132px; height:14px; padding:2px 4px 2px 4px; color:#000; font-size:12px; border:2px solid #ddd; ime-mode:disabled;}
+.SYInputPW {position:absolute; bottom:0; left:0; width:132px; height:14px; margin-top:2px; padding:2px 4px 2px 4px; color:#000; font-size:12px; background-color:#FFF; border:2px solid #ddd; ime-mode:active;}

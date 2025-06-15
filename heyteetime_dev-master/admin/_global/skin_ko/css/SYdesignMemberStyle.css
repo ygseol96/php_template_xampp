@@ -1,0 +1,279 @@
+@charset "utf-8";
+#SYTopGNB .GNBTopMenu ul.GNBTopMenuArea li ul.Menu li span.Member a {width:49px; background:url(../img/sy_title_top_menu01.gif) 0 2px no-repeat;}
+.SYLeftDateMenu {position:relative; width:190px; height:100%; margin:5px auto 0 auto; padding:0; text-align:center;}
+
+#SYLeftMenu ul.list li span.LeftMenu01 a {background:url(../img/sy_bg_left_title01.gif) 0 2px no-repeat;}
+#SYLeftMenu ul.list li span.LeftMenu02 a {background:url(../img/sy_bg_left_title01.gif) 0 -28px no-repeat;}
+#SYLeftMenu ul.list li span.LeftMenu03 a {background:url(../img/sy_bg_left_title01.gif) 0 -58px no-repeat;}
+#SYLeftMenu ul.list li span.LeftMenu04 a {background:url(../img/sy_bg_left_title02.gif) 0 -328px no-repeat;}
+#SYLeftMenu ul.list li span.LeftMenu05 a {background:url(../img/sy_bg_left_title02.gif) 0 -358px no-repeat;}
+#SYLeftMenu ul.list li span.LeftMenu06 a {background:url(../img/sy_bg_left_title02.gif) 0 -388px no-repeat;}
+
+table.SYManagerTable03 td {height:28px; padding:0 3px;}
+table.SYManagerTable03 tr.Title td, table.SYManagerTable03 tr.Title td {padding:5px 3px 5px 3px;}
+
+.SYDoubleTableContent {position:relative; width:100%; margin:0;}
+.SYDoubleTableContent h3 {position:relative; height:30px; line-height:30px; padding-left:5px; margin:0px; color:#000; font-weight:bold; background-color:#F5F5F5; border:1px solid #E5E5E5; border-bottom:none;}
+.SYDoubleTableContent .SYDoubleTable {border-collapse:collapse; width:100%; padding:0;}
+.SYDoubleTableContent .SYDoubleTable td.Table {padding:0;}
+.SYDoubleTableContent .SYDoubleTable td.SYGrape {text-align:center; border:1px solid #E5E5E5; border-left:none; padding-left:5px;}
+.SYDoubleTableContent .SYDoubleLeft {position:relative; float:left; width:50%;}
+.SYDoubleTableContent .SYDoubleRight {position:relative; float:left; width:50%;}
+.SYDoubleTableContent .SYDoubleLeft .SYManagerTable {padding-right:5px;} 
+.SYDoubleTableContent .SYDoubleRight .SYManagerTable {padding-left:5px;} 
+
+
+.SYSearchBox01 .TitleBar li.Title {margin-top:4px; line-height:24px; *line-height:; _line-height:;}
+.SYSearchBox01 .TitleBar .TitleName {font:bold 14px AppleGothic,"굴림",gulim,sans-serif; color:#000;}
+.SYSearchBox01 .TitleBar .TitleName .SYComplexType0, .SYSearchBox01 .TitleBar .ComplexTitle .SYComplexType1, .SYSearchBox01 .TitleBar .ComplexTitle .SYComplexType2, .SYSearchBox01 .TitleBar .ComplexTitle .SYComplexType3, .SYSearchBox01 .TitleBar .ComplexTitle .SYComplexType4 {font:normal 11px 돋움,Dotum,AppleGothic,sans-serif; margin:0 5px 0 0; *margin-top:2px; _margin-top:2px; text-align:center;}
+.SYSearchBox01 .SYTotalComplexCode {position:absolute; top:6px; right:15px;}
+
+
+#SYCalendarTabMenu {position:relative; height:36px; margin-top:5px; background:url(http://www.rsun.kr/SYdesignImage/sy_bg_tab_menu01.gif) repeat-x; border-right:1px solid #DDD;}
+#SYCalendarTabMenu ul {height:36px;}
+#SYCalendarTabMenu li {float:left; height:24px; margin-right:-1px; padding:11px 15px 0 15px; border-left:1px solid #E5E5E5; border-right:1px solid #E5E5E5; cursor:pointer;}
+#SYCalendarTabMenu li.on {margin:0; font-weight:bold; background-color:#FFF; border-top:1px solid #000; border-right:1px solid #000; border-left:1px solid #000;}
+#SYCalendarTabMenu li.right {float:right; height:30px; padding-top:5px; border:none;}
+
+#SYLeftDateView {position:relative; margin-top:10px;}
+#SYCalendarMenu {position:relative; padding:15px 0; text-align:center;}
+#SYDateShow {position:relative; color:#000; font-size:32px; font-family:arial,tahoma,verdana; font-weight:bold; text-align:center;}
+#SYDateShowCount {position:relative; text-align:center;}
+#SYDateShowCount .Number {color:#000; font-family:tahoma,verdana; font-size:11px; font-weight:bold;}
+#SYDateShowCount .bar {color:#000;}
+#SYCalendarBox {position:relative; height:100%;}
+
+table.SYCalendarTable {border-collapse:collapse; width:100%; font-size:12px; color:#303030; font-family:돋움,Dotum,AppleGothic,sans-serif; text-decoration:none; border-left:1px solid #EEE;}
+table.SYCalendarTable tr {width:100%;}
+table.SYCalendarTable td.CalendarDay {position:relative; margin:0; padding:0; border-right:1px solid #EEE; border-bottom:1px solid #EEE;}
+table.SYCalendarTable tr.Title {width:100%; height:28px; color:#000; font-size:11px; background:url(http://www.rsun.kr/SYdesignImage/sy_bg_table_bar01.gif) repeat-x;}
+table.SYCalendarTable tr.Title td {position:relative; height:28px; margin:0; padding:0; text-align:center; border-right:1px solid #EEE; border-bottom:none;}
+
+#SYCalendarBox .View {margin:0; padding:0; background-color:#F8F8F8; cursor:pointer;}
+#SYCalendarBox .View .SY_red {color:#F96969;}
+#SYCalendarBox .View .SY_green {color:#B0D763;}
+#SYCalendarBox .ToDay .SYMemberJoin {background-color:#3A3640; border:1px solid #1B171E;}
+#SYCalendarBox .View .SYMemberJoin {background-color:#817E86; border:1px solid #6A686B;}
+#SYCalendarBox .View .SYCIDJoin {background-color:#FFB64D; border:1px solid #FB9E43;}
+#SYCalendarBox .Existence {margin:0; padding:0; background-color:#FFF; cursor:pointer;}
+#SYCalendarBox .ToDay {margin:0; padding:0; background-color:#FFF; border:2px solid #000; cursor:pointer;}
+#SYCalendarBox .ViewON {margin:0; padding:0; background-color:#FFF; border:1px solid #DDD; cursor:pointer;}
+#SYCalendarBox .View h3 {position:relative; height:17px; line-height:100%; margin:0; padding:5px 0 0 4px; font-size:11px; color:#999; font-weight:normal;}
+#SYCalendarBox .Existence h3 {position:relative; height:17px; line-height:100%; margin:0; padding:5px 0 0 4px; font-size:11px; font-weight:normal;}
+#SYCalendarBox .ToDay h3 {position:relative; height:17px; line-height:100%; margin:0; padding:2px 0 0 2px; font-size:11px; font-weight:normal;}
+#SYCalendarBox .ViewON h3 {position:relative; height:17px; line-height:100%; margin:0; padding:3px 0 0 2px; font-size:11px; font-weight:normal;}
+#SYCalendarBox .View ul {position:relative; height:71px; padding:4px 4px; font-size:11px; color:#999; font-weight:normal;}
+#SYCalendarBox .Existence ul {position:relative; height:71px; padding:4px 4px; font-size:11px; font-weight:normal;}
+#SYCalendarBox .ToDay ul {position:relative; height:72px; padding:4px 2px; font-size:11px; font-weight:normal;}
+#SYCalendarBox .ViewON ul {position:relative; height:69px; padding:4px 2px; font-size:11px; font-weight:normal;}
+#SYCalendarBox .Day {font:bold 10px verdana,tahoma;}
+#SYCalendarBox .DayInfo {position:absolute; top:4px; right:2px; height:14px; line-height:14px; text-align:right; font-size:11px;}
+#SYCalendarBox .ex01, table.SYDateTable td .ex01 {color:#FFF; font-size:11px;}
+.SYMemberJoin {height:16px; padding-right:3px; color:#FFF; font:bold 11px verdana,tahoma; text-align:right; background:url(../img/sy_tab_member_img01.gif) 3px 3px #4F4A56 no-repeat; border:1px solid #2F2A34;}
+.SYCIDJoin {height:16px; margin-top:4px; padding-right:3px; color:#FFF; font:bold 11px verdana,tahoma; text-align:right; background:url(../img/sy_tab_member_img01.gif) 3px -15px #FD9500 no-repeat; border:1px solid #EB7502;}
+
+.SYMemberJoinGroup {height:16px; padding:2px 3px; font:bold 11px verdana,tahoma; letter-spacing:-1px; background-color:#F5F5F5; border:1px solid #E5E5E5; border-top:none;}
+#SYCalendarBox .SYMemberJoinGroup .ex01 {margin:0; padding:0; color:#666;}
+
+.SYIconPaymentTypeN {width:32px; height:20px; background:url(../img/sy_icon_payment_type_no.gif) no-repeat; border:0; cursor:pointer;}
+.SYIconPaymentTypeY {width:32px; height:20px; background:url(../img/sy_icon_payment_type_yes.gif) no-repeat; border:0; cursor:pointer;}
+
+.SYIconClubType00 {width:32px; height:20px; background:url(../img/sy_icon_club_type00.gif) no-repeat; border:0; cursor:pointer;}
+.SYIconClubType01 {width:32px; height:20px; background:url(../img/sy_icon_club_type01.gif) no-repeat; border:0; cursor:pointer;}
+.SYIconClubType02 {width:32px; height:20px; background:url(../img/sy_icon_club_type02.gif) no-repeat; border:0; cursor:pointer;}
+
+.SYIconClubAdmin0Y {width:32px; height:20px; background:url(../img/sy_icon_club_admin00.gif) no-repeat; border:0; cursor:pointer;}
+.SYIconClubAdmin0N {width:32px; height:20px; background:url(../img/sy_icon_club_admin00_no.gif) no-repeat; border:0; cursor:pointer;}
+.SYIconClubAdmin1Y {width:32px; height:20px; background:url(../img/sy_icon_club_admin01.gif) no-repeat; border:0; cursor:pointer;}
+.SYIconClubAdmin1N {width:32px; height:20px; background:url(../img/sy_icon_club_admin01_no.gif) no-repeat; border:0; cursor:pointer;}
+.SYIconClubAdmin2Y {width:32px; height:20px; background:url(../img/sy_icon_club_admin02.gif) no-repeat; border:0; cursor:pointer;}
+.SYIconClubAdmin2N {width:32px; height:20px; background:url(../img/sy_icon_club_admin02_no.gif) no-repeat; border:0; cursor:pointer;}
+.SYIconClubAdmin3Y {width:32px; height:20px; background:url(../img/sy_icon_club_admin03.gif) no-repeat; border:0; cursor:pointer;}
+.SYIconClubAdmin3N {width:32px; height:20px; background:url(../img/sy_icon_club_admin03_no.gif) no-repeat; border:0; cursor:pointer;}
+.SYIconClubAdmin4Y {width:32px; height:20px; background:url(../img/sy_icon_club_admin04.gif) no-repeat; border:0; cursor:pointer;}
+.SYIconClubAdmin4N {width:32px; height:20px; background:url(../img/sy_icon_club_admin04_no.gif) no-repeat; border:0; cursor:pointer;}
+.SYIconClubAdmin5Y {width:32px; height:20px; background:url(../img/sy_icon_club_admin05.gif) no-repeat; border:0; cursor:pointer;}
+.SYIconClubAdmin5N {width:32px; height:20px; background:url(../img/sy_icon_club_admin05_no.gif) no-repeat; border:0; cursor:pointer;}
+
+
+#SYTabMenuType02 {position:relative; height:23px; margin:10px auto 6px auto; text-align:center; background:url(http://www.rsun.kr/SYdesignImage/sy_bg_table_bar01.gif) repeat-x; border:1px solid #EEE; border-top:none; border-bottom:none;}
+#SYTabMenuType02 table {border-collapse:collapse; width:100%; font-size:11px; color:#303030; font-family:돋움,Dotum,AppleGothic,sans-serif; text-decoration:none; border:none;}
+#SYTabMenuType02 td {height:23px; border-right:1px solid #E5E5E5; cursor:pointer; border-bottom:1px solid #000;}
+#SYTabMenuType02 td.On {height:23px; font-weight:bold; color:#000; background-color:#FFF; border:1px solid #000; border-bottom:1px solid #FFF;}
+
+.AgencyView {position:relative; height:18px; margin-top:4px; padding:0; color:#FFF; font-size:11px;}
+.AgencyViewTitle {position:relative; height:21px; margin-top:4px; padding:7px 0 0 5px; color:#000; font-weight:bold; font-size:11px; text-align:left; background:url(http://www.rsun.kr/SYdesignImage/sy_bg_table_bar01.gif) repeat-x; border-left:1px solid #DDD; border-right:1px solid #DDD;}
+.AgencyView .SYStickArea {float:left; width:155px;}
+.AgencyView .SYAgencyStick {float:left; height:15px; padding:3px 0 0 3px; text-align:left; overflow:hidden; line-height:14px;}
+.AgencyView .AgencyCount {position:absolute; top:2px; right:0; width:80px; padding-right:3px; text-align:right; color:#000; font:bold 11px verdana,tahoma;}
+.AgencyViewTitle .AgencyCount {position:absolute; top:5px; right:0; width:80px; padding-right:3px; text-align:right; color:#000; font:bold 12px verdana,tahoma;}
+.AgencyViewA, .AgencyViewB, .AgencyViewC, .AgencyViewD, .AgencyView0, .AgencyViewRSUN, .AgencyViewNAVERRSUN, .AgencyViewNAVERRSUNPlus, .AgencyViewNAVERRSUNPlusChange, .AgencyViewSpeedGongsil, .AgencyViewSpeedGongsilChange {position:relative; height:16px; margin-top:4px; padding:4px 0 0 5px; color:#FFF; font-size:11px; text-align:left;}
+.AgencyView0 {background-color:#817E86; border:1px solid #6A686B;}
+.AgencyViewA {background-color:#91B904; border:1px solid #719F2E;}
+.AgencyViewB {background-color:#FD9500; border:1px solid #DF7F55;}
+.AgencyViewC {background-color:#E14E4E; border:1px solid #B24444;}
+.AgencyViewD {background-color:#6391DD; border:1px solid #4872B2;}
+.AgencyViewRSUN {font:bold 11px verdana,tahoma; background-color:#4F4A56; border:1px solid #2F2A34;}
+.AgencyViewNAVERRSUN {font:bold 11px verdana,tahoma; background-color:#91B904; border:1px solid #719F2E;}
+.AgencyViewNAVERRSUNPlus {font:bold 11px verdana,tahoma; background-color:#6391DD; border:1px solid #4872B2;}
+.AgencyViewNAVERRSUNPlusChange {font:bold 11px verdana,tahoma; background-color:#6391DD; border:1px solid #4872B2;}
+.AgencyViewSpeedGongsil {font:bold 11px verdana,tahoma; background-color:#D75D68; border:1px solid #C90114;}
+.AgencyViewSpeedGongsilChange {font:bold 11px verdana,tahoma; background-color:#D75D68; border:1px solid #C90114;}
+.AgencyViewA .AgencyCount, .AgencyViewB .AgencyCount, .AgencyViewC .AgencyCount, .AgencyViewD .AgencyCount, .AgencyView0 .AgencyCount, .AgencyViewRSUN .AgencyCount, .AgencyViewNAVERRSUN .AgencyCount, .AgencyViewNAVERRSUNPlus .AgencyCount, .AgencyViewNAVERRSUNPlusChange .AgencyCount, .AgencyViewSpeedGongsil .AgencyCount, .AgencyViewSpeedGongsilChange .AgencyCount {position:absolute; top:2px; right:0; width:80px; padding-right:3px; text-align:right; color:#FFF; font:bold 11px verdana,tahoma;}
+.SYIconJoinRSUN {width:15px; height:14px; margin-right:3px; background:url(../img/sy_icon_join_rsun01.gif) no-repeat; border:none;}
+.SYIconJoinNAVERRSUN {width:15px; height:14px; background:url(../img/sy_icon_join_naver_rsun01.gif) no-repeat; border:none;}
+.SYIconJoinNAVERRSUNPlus {width:15px; height:14px; background:url(../img/sy_icon_join_naver_rsun_plus01.gif) no-repeat; border:none;}
+.SYIconJoinWebBilder {width:15px; height:14px; background:url(../img/sy_icon_join_web_bilder01.gif) no-repeat; border:none;}
+.SYIconJoinSpeedGongsil {width:15px; height:14px; background:url(../img/sy_icon_join_speed_gongsil01.gif) no-repeat; border:none;}
+
+.SYIconJoinRSUNNo {width:15px; height:14px; margin-right:3px; background:url(../img/sy_icon_join_rsun_no.gif) no-repeat; border:none;}
+.SYIconJoinNAVERRSUNNo {width:15px; height:14px; background:url(../img/sy_icon_join_naver_rsun_no.gif) no-repeat; border:none;}
+.SYIconJoinNAVERRSUNPlusNo {width:15px; height:14px; background:url(../img/sy_icon_join_naver_rsun_no.gif) no-repeat; border:none;}
+.SYIconJoinWebBilderNo {width:15px; height:14px; background:url(../img/sy_icon_join_web_bilder_no.gif) no-repeat; border:none;}
+.SYIconJoinSpeedGongsilNo {width:15px; height:14px; background:url(../img/sy_icon_join_speed_gongsil_no.gif) no-repeat; border:none;}
+
+.SYNANERRSUNText {color:#719F2E;}
+.SYNANERRSUNPlusText {color:#4872B2;}
+.SYSpeedGongsilText {color:#A51320;}
+.SYRSUNTextNo, .SYNANERRSUNTextNo, .SYNANERRSUNPlusTextNo, .SYSpeedGongsilTextNo {color:#CCC;}
+
+.SYLeftTable01, .SYLeftTable02 {position:relative; margin:0; padding:0;}
+.SYCalendarSearch {position:relative; padding:10px;}
+.SYCalendarSearch .Line {margin-top:7px; padding-top:5px; border-top:1px dashed #E5E5E5;}
+#SYCalendarShow {position:relative; margin:0; padding:0;}
+#SYCalendarShow .MemberTotal {position:relative; margin-top:4px; padding:2px 2px; color:#FFF; font:bold 11px verdana,tahoma; text-align:right; background-color:#4F4A56; border:1px solid #2F2A34;}
+#SYCalendarShow .PlusTotal {position:relative; margin-top:4px; padding:2px 2px; color:#FFF; font:bold 11px verdana,tahoma; text-align:right; background-color:#6391DD; border:1px solid #4872B2;}
+#SYCalendarShow .GongsilTotal {position:relative; margin-top:4px; padding:2px 2px; color:#FFF; font:bold 11px verdana,tahoma; text-align:right; background-color:#D75D68; border:1px solid #C90114;}
+#SYCalendarShow .CIDTotal {position:relative; margin-top:4px; padding:2px 2px; color:#FFF; font:bold 11px verdana,tahoma; text-align:right; background-color:#FD9500; border:1px solid #EB7502;}
+#SYCalendarShow h3 {position:relative; line-height:18px; padding-left:3px; color:#FFF; font-size:11px; text-align:left;}
+#SYCalendarShow h3 .AgencyCount {position:absolute; top:0; *top:-2px; _top:-2px; right:0; width:80px; padding-right:4px; text-align:right; color:#FFF; font:bold 11px verdana,tahoma;}
+.SYCalendarSearch h3.Tip {margin-top:5px; padding:0 0 0 30px; *padding-top:2px; _padding-top:2px; font-size:11px; text-align:left; background:url(http://www.rsun.kr/SYdesignImage/sy_icon_tip01.gif) no-repeat;}
+
+#SYBoardBox {position:relative;}
+.SYMemberNumber {float:left; width:78px; height:16px; padding:2px 2px 0 0; overflow:hidden; color:#FFF; font:bold 11px verdana,tahoma; text-align:right; background:url(../img/sy_bg_member_num01.gif) no-repeat;}
+.SYMemberNumberSYGray01 {float:left; width:78px; height:16px; padding:2px 2px 0 0; overflow:hidden; color:#FFF; font:bold 11px verdana,tahoma; text-align:right; background:url(../img/sy_bg_member_num02.gif) no-repeat;}
+.SYCIDNumber {float:left; width:78px; height:16px; padding:2px 2px 0 0; overflow:hidden; color:#FFF; font:bold 11px verdana,tahoma; text-align:right; background:url(../img/sy_bg_cid_num01.gif) no-repeat;}
+.SYCIDNumber0 {float:left; width:78px; height:16px; padding:2px 2px 0 0; overflow:hidden; color:#FFF; font:bold 11px verdana,tahoma; text-align:right; background:url(../img/sy_bg_cid_num00.gif) no-repeat;}
+.SYCIDNumber1 {float:left; width:78px; height:16px; padding:2px 2px 0 0; overflow:hidden; color:#FFF; font:bold 11px verdana,tahoma; text-align:right; background:url(../img/sy_bg_cid_num01.gif) no-repeat;}
+.SYCIDNumber2 {float:left; width:78px; height:16px; padding:2px 2px 0 0; overflow:hidden; color:#FFF; font:bold 11px verdana,tahoma; text-align:right; background:url(../img/sy_bg_cid_num02.gif) no-repeat;}
+.SYCIDNumber3 {float:left; width:78px; height:16px; padding:2px 2px 0 0; overflow:hidden; color:#FFF; font:bold 11px verdana,tahoma; text-align:right; background:url(../img/sy_bg_cid_num03.gif) no-repeat;}
+.SYCIDNumber4 {float:left; width:78px; height:16px; padding:2px 2px 0 0; overflow:hidden; color:#FFF; font:bold 11px verdana,tahoma; text-align:right; background:url(../img/sy_bg_cid_num04.gif) no-repeat;}
+.SYCIDNumber5 {float:left; width:78px; height:16px; padding:2px 2px 0 0; overflow:hidden; color:#FFF; font:bold 11px verdana,tahoma; text-align:right; background:url(../img/sy_bg_cid_num05.gif) no-repeat;}
+.SYCIDNumber6 {float:left; width:78px; height:16px; padding:2px 2px 0 0; overflow:hidden; color:#FFF; font:bold 11px verdana,tahoma; text-align:right; background:url(../img/sy_bg_cid_num06.gif) no-repeat;}
+.SYCIDNumber7 {float:left; width:78px; height:16px; padding:2px 2px 0 0; overflow:hidden; color:#FFF; font:bold 11px verdana,tahoma; text-align:right; background:url(../img/sy_bg_cid_num07.gif) no-repeat;}
+.SYCIDNumber8 {float:left; width:78px; height:16px; padding:2px 2px 0 0; overflow:hidden; color:#FFF; font:bold 11px verdana,tahoma; text-align:right; background:url(../img/sy_bg_cid_num08.gif) no-repeat;}
+.SYCIDNumber9 {float:left; width:78px; height:16px; padding:2px 2px 0 0; overflow:hidden; color:#FFF; font:bold 11px verdana,tahoma; text-align:right; background:url(../img/sy_bg_cid_num09.gif) no-repeat;}
+.SYCIDNumberNo {float:left; width:78px; height:16px; padding:2px 2px 0 0; overflow:hidden; color:#FFF; font:bold 11px verdana,tahoma; text-align:right; background:url(../img/sy_bg_cid_num01_no.gif) no-repeat;}
+.SYCIDNumberCancel {float:left; width:78px; height:16px; padding:2px 2px 0 0; overflow:hidden; color:#FFF; font:bold 11px verdana,tahoma; text-align:right; background:url(../img/sy_bg_cid_num01_cancel.gif) no-repeat;}
+.SYIncharge {float:left; width:107px; height:41px; margin:-23px 0 0 5px; background:url(../img/sy_bg_incharge01.gif) no-repeat; text-align:center;}
+.SYIncharge .name {float:left; width:62px; padding:6px 0 0 45px; font:bold 12px 돋움,dotum,Apple Gothic,sans-serif; text-align:left;}
+
+.SYImpactView {padding:4px 0; overflow:hidden; font-weight:bold;}
+.SYJuminNumber {height:14px; margin-top:2px; padding:2px; font:normal 11px verdana,tahoma; background-color:#F5F5F5;}
+.SYAddressArea {height:14px; margin-top:2px; padding:2px; font:normal 12px 돋움,dotum,Apple Gothic,sans-serif; background-color:#F5F5F5;}
+.SYDateView {float:left; width:120px; height:18px; font:normal 12px verdana,tahoma; letter-spacing:-1px; text-align:left; text-indent:5px;}
+.SYCIDDateView {float:left; width:72px; height:18px; font:normal 12px verdana,tahoma; letter-spacing:-1px; text-align:left; text-indent:5px;}
+
+.SYJoinRouteA {background:url(../img/sy_icon_route_a.gif) right 1px no-repeat;}
+.SYJoinRouteB {background:url(../img/sy_icon_route_b.gif) right 1px no-repeat;}
+.SYJoinRouteC {background:url(../img/sy_icon_route_c.gif) right 1px no-repeat;}
+.SYJoinRouteD {background:url(../img/sy_icon_route_d.gif) right 1px no-repeat;}
+
+.SYCIDState0 {width:50px; height:15px; padding-top:3px; color:#EE8100; font:bold 11px 돋움,dotum,Apple Gothic,sans-serif; letter-spacing:-1px;}
+.SYCIDState1 {width:50px; height:15px; padding-top:3px; color:#598B02; font:normal 11px 돋움,dotum,Apple Gothic,sans-serif; letter-spacing:-1px;}
+.SYCIDState2 {width:50px; height:15px; padding-top:3px; color:#EE8C00; font:normal 11px 돋움,dotum,Apple Gothic,sans-serif; letter-spacing:-1px;}
+.SYCIDState3 {width:50px; height:15px; padding-top:3px; color:#C10000; font:normal 11px 돋움,dotum,Apple Gothic,sans-serif; letter-spacing:-1px;}
+.SYCIDState4 {width:50px; height:15px; padding-top:3px; color:#999; font:normal 11px 돋움,dotum,Apple Gothic,sans-serif; letter-spacing:-1px;}
+.SYCIDState5 {width:50px; height:15px; padding-top:3px; color:#AB4040; font:normal 11px 돋움,dotum,Apple Gothic,sans-serif; letter-spacing:-1px;}
+.SYCIDState6 {width:50px; height:15px; padding-top:3px; color:#094BA4; font:normal 11px 돋움,dotum,Apple Gothic,sans-serif; letter-spacing:-1px;}
+.SYCIDState7 {width:50px; height:15px; padding-top:3px; color:#3A0279; font:normal 11px 돋움,dotum,Apple Gothic,sans-serif; letter-spacing:-1px;}
+.SYCIDState8 {width:50px; height:15px; padding-top:3px; color:#1B7162; font:normal 11px 돋움,dotum,Apple Gothic,sans-serif; letter-spacing:-1px;}
+.SYCIDState9 {width:50px; height:15px; padding-top:3px; color:#795302; font:normal 11px 돋움,dotum,Apple Gothic,sans-serif; letter-spacing:-1px;}
+
+
+.SYLayerPopup {position:absolute; z-index:2005; padding:1.5em; background-color:#FFF; border:2px solid #000;}
+
+table.SYMemberView {border-collapse:collapse; width:100%; font-size:12px; color:#303030; font-family:돋움,Dotum,AppleGothic,sans-serif; text-decoration:none; border:1px solid #EEE; border-top:2px solid #EEE; border-bottom:2px solid #EEE;}
+table.SYMemberView tr {width:100%;}
+table.SYMemberView td {height:29px; *height:26px; _height:26px; padding-left:5px; text-align:left; border-right:1px solid #EEE; border-bottom:1px solid #EEE;}
+table.SYMemberView td.title {font-size:11px; font-weight:bold; background-color:#F9F9F9;}
+table.SYMemberView td.content {}
+
+#SYSimpleTabMenu {position:relative; height:32px; background:url(http://www.rsun.kr/SYdesignImage/sy_bg_tab_menu02.gif) repeat-x; border-right:1px solid #DDD;}
+#SYSimpleTabMenu ul {height:32px;}
+#SYSimpleTabMenu li {float:left; height:21px; margin-right:-1px; padding:10px 15px 0 15px; border-right:1px solid #E5E5E5; border-left:1px solid #E5E5E5; cursor:pointer;}
+#SYSimpleTabMenu li.On {margin:0; font-weight:bold; background-color:#FFF; border-top:1px solid #000; border-right:1px solid #000; border-left:1px solid #000;}
+
+#SYMemberContent {position:relative; float:left; width:100%;}
+
+#SYMemberButton {margin:10px 0 4px 0; text-align:center;}
+
+.SYTableTopArea02 {position:relative; float:left; width:100%; margin-top:10px; overflow:hidden;}
+.SYTableTopArea02 ul {padding:4px 5px 0 5px; color:#999; font:normal 11px dotum,돋움,sans-serif;}
+.SYTableTopArea02 li.Left {float:left;}
+.SYTableTopArea02 li.Right {position:absolute; top:3px; right:5px;}
+
+#SYIDModify {float:left; width:163px; height:22px; padding:0; line-height:21px;}
+.ex01 {color:#999; font:normal 11px 돋움,Dotum,AppleGothic,sans-serif;}
+
+#SYAddress {float:left; width:190px; height:15px; *margin-top:2px; _margin-top:2px; margin-right:3px; *margin-right:0; _margin-right:0; padding:4px 4px 0 4px; border:1px solid #DDD; vertical-align:middle;}
+.SYBasicAddress {float:left; width:190px; height:15px; *margin-top:2px; _margin-top:2px; margin-right:3px; *margin-right:0; _margin-right:0; padding:4px 4px 0 4px; border:1px solid #DDD; vertical-align:middle;}
+
+#SYBreakDownBoxList {position:relative; height:104px; overflow:auto; overflow-x:hidden; border:1px solid #DDD; border-top:none;}
+.SYListMenu {position:relative; margin-top:5px; padding:4px 4px; text-align:left; background-color:#F5F5F5; border:1px solid #DDD; border-bottom:none;}
+#SYSimpleTableCount {position:absolute; top:9px; left:310px; *left:305px; _left:305px; width:320px; padding:0; text-align:right;}
+table.SYBoardTable {border-collapse:collapse; width:100%; *width:; _width:; font-size:12px; color:#303030; font-family:돋움,Dotum,AppleGothic,sans-serif; text-decoration:none; border-bottom:1px solid #E5E5E5; table-layout:fixed; text-align:left;}
+table.SYBoardTable tr {width:100%; height:25px;}
+table.SYBoardTable td {height:25px; padding:0; overflow:hidden; vertical-align:middle; white-space:nowrap; border-right:1px solid #EEE; text-indent:3px; border-bottom:1px solid #EEE;}
+table.SYBoardTable tr.Title {width:100%; height:28px; color:#000; font-size:11px; background:url(http://www.rsun.kr/SYdesignImage/sy_bg_table_bar01.gif) repeat-x;}
+table.SYBoardTable tr.Title td {height:26px; text-align:center; border-bottom:1px solid #EEE; border-right:none;}
+table.SYBoardTable tr.Title td .on {height:15px; padding-bottom:4px; *padding:0; _padding:0; color:#000; background:url(../img/sy_btn_admin_arrow01.gif) center 12px no-repeat;}
+table.SYBoardTable tr.Title td .off {height:15px; padding-bottom:4px; *padding:0; _padding:0; color:#000; background:url(../img/sy_btn_admin_arrow02.gif) center 12px no-repeat;}
+table.SYBoardTable td.none {height:103px; *height:96px; _height:96px; padding:0; *padding:5px 3px 2px 3px; _padding:5px 3px 2px 3px; color:#999; font-size:11px; text-align:center; border-right:none; border-bottom:none;}
+table.SYBoardTable td.noBorder {border-right:none;}
+
+table.SYBoardTable td .SYCIDState0 {color:#EE8100; font-weight:bold; letter-spacing:0;}
+table.SYBoardTable td .SYCIDState1 {color:#598B02; font-weight:bold; letter-spacing:0;}
+table.SYBoardTable td .SYCIDState2 {color:#EE8C00; font-weight:bold; letter-spacing:0;}
+table.SYBoardTable td .SYCIDState3 {color:#C10000; font-weight:bold; letter-spacing:0;}
+table.SYBoardTable td .SYCIDState4 {color:#999; font-weight:bold; letter-spacing:0;}
+table.SYBoardTable td .SYCIDState5 {color:#AB4040; font-weight:bold; letter-spacing:0;}
+table.SYBoardTable td .SYCIDState6 {color:#094BA4; font-weight:bold; letter-spacing:0;}
+table.SYBoardTable td .SYCIDState7 {color:#3A0279; font-weight:bold; letter-spacing:0;}
+table.SYBoardTable td .SYCIDState8 {color:#1B7162; font-weight:bold; letter-spacing:0;}
+table.SYBoardTable td .SYCIDState9 {color:#795302; font-weight:bold; letter-spacing:0;}
+
+#SYLayerTip {padding:5px 0 5px 38px; margin-top:5px; font-size:11px; font-family:돋움,Dotum,AppleGothic,sans-serif; text-align:left; line-height:150%; background:url(../img/sy_icon_tip01.gif) 8px 7px #FAFAFA no-repeat; border:1px solid #DDD;}
+
+.Payment01, .Coupon01, .Point01, .Al01, .Login01 {width:50px; text-align:center; font-family:verdana,tahoma; color:#666; font-size:10px; letter-spacing:-1px;}
+.CID01 {width:86px; text-align:center; font-family:verdana,tahoma; color:#666; font-size:10px; letter-spacing:-1px;}
+.CIDAS01 {width:40px; text-align:center; font-family:verdana,tahoma; color:#666; font-size:10px; letter-spacing:-1px;}
+.Payment02, .Point02, .Al02, .Login02 {width:100px; color:#000; font-size:11px; font-weight:bold; text-align:center;}
+.Point02, .CID02 {width:70px; color:#000; font-size:11px; font-weight:bold; text-align:center;}
+.Coupon02 {width:200px; font-size:11px; text-align:center;}
+.CIDAS02 {width:60px; color:#000; font-size:11px; font-weight:bold;}
+.Payment03 {width:180px;}
+.CID03 {width:90px; text-align:center;}
+.CIDAS03 {width:50px; text-align:center; font-family:verdana,tahoma; color:#666; font-size:10px; letter-spacing:-1px;}
+.Login03, .Login04 {width:132px; text-align:center; color:#000; font:bold 11px verdana,tahoma; letter-spacing:-1px;}
+.Payment04 {width:120px; text-align:right;}
+.CIDAS04 {width:140px;}
+.Login05 {width:106px; text-align:right;}
+.CIDAS05 {width:50px; text-align:center;}
+.Payment05, .Coupon05, .Point05, .Al05, .CID05, .Login06 {text-align:center; font-family:verdana,tahoma; color:#666; font-size:10px; letter-spacing:-1px;}
+.Coupon03 {width:180px; text-align:center; color:#000; font:bold 11px verdana,tahoma; letter-spacing:-1px;}
+.Coupon04 {width:70px; text-align:center;}
+.Point03 {width:285px;}
+.Al03, .CID04 {width:250px;}
+.Point04, .Al04 {width:90px; text-align:right;}
+.CIDAS06 {width:60px; font-family:verdana,tahoma; color:#000; font-size:11px; font-weight:bold; text-align:center; letter-spacing:-1px;}
+.CIDAS07 {width:60px;}
+.CIDAS08 {border-right:none;}
+
+.SYDate11 {font-size:11px font-family:Tahoma;}
+
+.SYFocusCoupon, .SYNormalCoupon, .SYFocusCouponUsed, .SYNormalCouponUsed {position:relative; width:180px; height:15px; margin:-1px auto 0 auto; padding:3px 0 0 5px; color:#FFF; font-size:11px; text-align:left;}
+.SYFocusCoupon {background-color:#467CBA; border:1px solid #44648A;}
+.SYNormalCoupon {background-color:#7A899B; border:1px solid #596A7F;}
+.SYFocusCouponUsed, .SYNormalCouponUsed {background-color:#A4ABAC; border:1px solid #858C8D;}
+.CouponCode {position:absolute; top:2px; right:0; width:150px; padding-right:3px; text-align:right; color:#FFF; font:bold 11px verdana,tahoma;}

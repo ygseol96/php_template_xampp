@@ -1,0 +1,36 @@
+<?php
+/** ---------------------------------------------------------------
+@program : 로그인폼
+@description :
+@fileinfo : /login.html
+@filedescription :
+
+@auth : 현민원
+@since : 2018.4
+------------------------------------------------------------------**/
+$_NO_LOGIN = true;
+
+include_once $_SERVER['DOCUMENT_ROOT']."/inc/adm_include.php";
+
+//print_r($_SESSION);
+
+// ============= TEMPLATE START =========================//
+$tpl = new Template;
+$tpl->skin = $_SESSION['adm_skin'];
+
+
+include_tpl('login.tpl');
+
+basic_tpl();
+
+////// 바디 입력값 설정
+$tpl->assign(array(
+//'bank'=>$bank,
+));
+
+// 템플릿 출력
+$tpl->print_('body');
+
+db_close();
+?>
+

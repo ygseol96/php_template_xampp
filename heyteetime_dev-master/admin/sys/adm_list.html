@@ -1,0 +1,240 @@
+<?php
+/** ---------------------------------------------------------------
+@program : 사용자
+@description : 시스템관리  > 사용자 리스트
+@fileinfo : /sys/adm_list.html
+@filedescription : 
+
+@auth : 현민원
+@since : 2024.1
+------------------------------------------------------------------**/
+
+
+include_once $_SERVER['DOCUMENT_ROOT']."/inc/adm_include.php";
+include_once $_SERVER['DOCUMENT_ROOT']."/inc/lib/paging.php";
+
+
+
+//왼쪽메뉴 생성
+$leftmenu = get_admin_leftmenu("6");
+
+//왼쪽메뉴 하이라이트
+$dmenu = 6;
+
+//gnb selector
+$hgnb = 5;
+
+// 권한체크
+$result = get_admin_auth($dmenu);
+if($result['result']  != 'Y') {
+	alert($result['msg'], 'url', '/');
+
+}
+
+$_SESSION['list_url'] = getURL();
+
+
+
+// paging param
+if(empty($_REQUEST['s_viewCount'])) $_REQUEST['s_viewCount'] = "30";
+if(empty($_REQUEST['s_page_block'])) $_REQUEST['s_page_block'] = "10";
+if(empty($_REQUEST['s_orderby'])) $_REQUEST['s_orderby'] = "1";
+if(empty($_REQUEST['s_admin'])) $_REQUEST['s_admin'] = "";
+if(empty($_REQUEST['s_keyfield'])) $_REQUEST['s_keyfield'] = "";
+
+$PageStr ="";
+$Paging ="";
+
+
+
+
+
+//// 검색데이터 생성
+
+//부서 가져오기
+$sql = "
+	select
+		cp_seq as value
+		, part_name as name
+	from comp_part
+	where
+		use_yn = 'Y'
+	order by order_no asc
+";
+$part = my_select($sql, $myconn);
+
+
+//직급 가져오기
+$sql = "
+	select
+		cj_seq as value
+		, jk_name as name
+	from comp_jikgub
+	where
+		use_yn = 'Y'
+	order by order_no asc
+";
+$jk = my_select($sql, $myconn);
+
+
+// 검색조건
+$s_where =" use_yn ='Y'  ";
+
+
+if(!empty($_REQUEST['s_confirm_yn'])) {
+	$s_where .= " AND a.confirm_yn = '".$_REQUEST['s_confirm_yn']."' ";
+}
+
+if(!empty($_REQUEST['s_work_yn'])) {
+	$s_where .= " AND a.work_yn = '".$_REQUEST['s_work_yn']."' ";
+}
+
+if(!empty($_REQUEST['s_part'])) {
+	$s_where .= " AND a.adm_part_seq = '".$_REQUEST['s_part']."' ";
+}
+
+if(!empty($_REQUEST['s_jk'])) {
+	$s_where .= " AND a.cj_seq = '".$_REQUEST['s_jk']."' ";
+}
+
+if($_REQUEST['s_keyfield']) {
+	switch($_REQUEST['s_keyselect']) {
+
+		
+		default :			
+			$s_where .= " AND a.{$_REQUEST['s_keyselect']} like '%".$_REQUEST['s_keyfield']."%' ";			
+			break;
+
+		
+	}
+}
+
+
+//couting
+$sql = "
+	SELECT
+		count(*)
+	FROM admin_member as a
+		
+			
+	where 
+		{$s_where}
+
+";
+//write($sql);
+
+$cnt = my_read($sql, $myconn);
+
+$data = array();
+
+$mwPaging = new mwPaging($_REQUEST['s_viewCount'], $_REQUEST['s_page_block']);
+$mwPaging->Set($cnt);	// select count(*) .. 리스팅 카운트한 갯수
+
+if($cnt > 0 ) {
+	
+	
+	$s_limit = " limit ".$mwPaging->GetStartPos().", ".$_REQUEST['s_viewCount'];
+
+	switch($_REQUEST['s_orderby']) {
+		case "1" :
+			$s_orderby = " order by a.regdt desc ";
+			break;
+
+		case "2" :
+			$s_orderby = " order by a.regdt asc ";
+			break;
+
+		case "3" :
+			$s_orderby = " order by a.adm_name desc ";
+			break;
+
+		case "4" :
+			$s_orderby = " order by a.adm_name asc ";
+			break;
+		
+		default :
+			$s_orderby = " order by a.regdt desc ";
+			break;
+	}
+
+
+	
+
+	$sql = "
+		SELECT
+			a.*
+			, case 
+				when a.work_yn ='Y' then '재직중'
+				when a.work_yn ='N' then '퇴사'
+				when a.work_yn ='W' then '휴직중'
+			end as work_txt
+			, case 
+				when a.confirm_yn ='Y' then '승인'
+				when a.confirm_yn ='N' then '대기'
+			end as confirm_txt
+
+			, (select jk_name from comp_jikgub where cj_seq = a.cj_seq) as jk_name
+			, (select part_name from comp_part where cp_seq = a.adm_part_seq) as part_name
+
+		FROM admin_member as a
+		where 
+			{$s_where}
+			{$s_orderby}
+			{$s_limit}
+	";
+
+	//write($sql);
+	$data = my_select($sql, $myconn);
+	$data_cnt = my_count($data); 
+	for($i=0; $i < $data_cnt; $i++) {
+		
+	
+		
+		
+	}
+
+	
+	//페이징 뷰
+	$PageStr = $mwPaging->PrintHidden();
+	$Paging = $mwPaging->Show("schForm","get");
+
+
+
+}
+
+
+
+
+
+
+// ============= TEMPLATE START =========================//
+$tpl = new Template; 
+$tpl->skin = $_SESSION['adm_skin'];
+
+
+
+
+
+include_tpl('sys/adm_list.tpl');
+
+basic_tpl();
+
+////// 바디 입력값 설정
+$tpl->assign(array(
+	'dmenu' => $dmenu,
+	'part' => $part,
+	'jk' => $jk,
+	
+	'TotalCnt'	=> $cnt,
+	'data'=>$data,
+	'PageStr'=>$PageStr,
+	'Paging'=>$Paging,
+	'mwPaging'=>$mwPaging,
+
+));
+
+// 템플릿 출력
+$tpl->print_('body'); 
+
+db_close();
+?>

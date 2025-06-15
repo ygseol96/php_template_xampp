@@ -1,0 +1,173 @@
+<?php include_once $_SERVER['DOCUMENT_ROOT']."/inc/setup.php"; ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en_US" xml:lang="en_US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+<title>TM128 마커체크</title>
+<!-- prevent IE6 flickering -->
+
+<script type="text/javascript">
+function copy(TXT) {
+	window.clipboardData.setData("Text",TXT);
+	alert('복사되었습니다.');
+}
+try {document.execCommand('BackgroundImageCache', false, true);} catch(e) {}
+
+
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=PwSv6ssxWZ39wTxbh5Z5&submodules=panorama,geocoder,drawing,visualization"></script> -->
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=<?=$_INC['naver']['client_id']?>&submodules=panorama,geocoder,drawing,visualization"></script>
+
+
+<script type="text/javascript">
+
+	$(function() {
+		if($('#address').val() > '') {
+			searchAddressToCoordinate($('#address').val());
+		}
+	});
+
+</script>
+<body>
+
+<style type="text/css">
+#mapArea {border:1px solid #ddd;display:block;width:100%;height:900px;clear:both;}
+.search { position:absolute;z-index:1000;top:20px;left:20px; }
+.search #address { width:150px;height:20px;line-height:20px;border:solid 1px #555;padding:5px;font-size:12px;box-sizing:content-box; }
+.search #submit { height:30px;line-height:30px;padding:0 10px;font-size:12px;border:solid 1px #555;border-radius:3px;cursor:pointer;box-sizing:content-box; }
+
+font-family: 'Nanum Gothic', sans-serif;
+</style>
+
+<div id="mapArea">
+	<div class="search">
+		<input id="address" type="text" placeholder="검색할 주소" value="<?=$_REQUEST['address']?>"  style="width:200px"/>
+		<input id="submit" type="button" value="주소 검색" />
+	</div>
+</div>
+<code id="snippet" class="snippet"></code>
+
+
+<script type="text/javascript">
+var map = new naver.maps.Map("mapArea", {
+    center: new naver.maps.LatLng(37.2711044,127.0665287),
+    zoom: 18,
+	scaleControl: false,
+	logoControl: false,
+	mapDataControl: false,
+	zoomControl: true,
+	zoomControlOptions: { //줌 컨트롤의 옵션
+		position: naver.maps.Position.TOP_RIGHT
+	},
+	minZoom: 2,
+	maxZoom: 25,
+	scrollWheel: true
+});
+
+
+var infoWindow = new naver.maps.InfoWindow({
+    anchorSkew: true
+});
+
+map.setCursor('pointer');
+
+// search by tm128 coordinate
+function searchCoordinateToAddress(latlng) {
+    var tm128 = naver.maps.TransCoord.fromLatLngToTM128(latlng);
+    //alert(latlng);
+    infoWindow.close();
+
+    naver.maps.Service.reverseGeocode({
+        location: tm128,
+        coordType: naver.maps.Service.CoordType.TM128
+    }, function(status, response) {
+        if (status === naver.maps.Service.Status.ERROR) {
+            return alert('잘못 선택하였습니다.');
+        }
+
+        var items = response.result.items,
+            htmlAddresses = [];
+
+        for (var i=0, ii=items.length, item, addrType; i<ii; i++) {
+            item = items[i];
+            addrType = item.isRoadAddress ? '[도로명 주소]' : '[지번 주소]';
+
+            htmlAddresses.push((i+1) +'. '+ addrType +' '+ item.address);
+            htmlAddresses.push('&nbsp&nbsp&nbsp → '+ item.point.x +','+ item.point.y);
+        }
+				
+				var latlng_arr = latlng.toString().split(",");
+				
+				var lat = latlng_arr[0].substring(5,latlng_arr[0].length);
+				var lng = latlng_arr[1].substring(4,latlng_arr[1].length-1);
+				
+
+        infoWindow.setContent([
+                '<div style="padding:10px;min-width:200px;line-height:150%;">',
+                '<h4 style="margin-top:5px;">검색 좌표 : '+ response.result.userquery +' <br>위도 : '+lat+'<br>경도 : '+lng+'</h4><br />',
+                htmlAddresses.join('<br />'),
+                '</div>'
+            ].join('\n'));
+
+        infoWindow.open(map, latlng);
+    });
+}
+
+// result by latlng coordinate
+function searchAddressToCoordinate(address) {
+    naver.maps.Service.geocode({
+        address: address
+    }, function(status, response) {
+        if (status === naver.maps.Service.Status.ERROR) {
+            return alert('잘못 선택하였습니다.');
+        }
+
+        var item = response.result.items[0],
+            addrType = item.isRoadAddress ? '[도로명 주소]' : '[지번 주소]',
+            point = new naver.maps.Point(item.point.x, item.point.y);
+
+        infoWindow.setContent([
+                '<div style="padding:10px;min-width:200px;line-height:150%;">',
+                '<h4 style="margin-top:5px;">검색 주소 : '+ response.result.userquery +'</h4><br />',
+                addrType +' '+ item.address +'<br />',
+                '&nbsp&nbsp&nbsp → '+ point.x +','+ point.y,
+                '</div>'
+            ].join('\n'));
+
+
+        map.setCenter(point);
+        infoWindow.open(map, point);
+    });
+}
+
+function initGeocoder() {
+    map.addListener('click', function(e) {
+        searchCoordinateToAddress(e.coord);
+    });
+
+    $('#address').on('keydown', function(e) {
+        var keyCode = e.which;
+
+        if (keyCode === 13) { // Enter Key
+            searchAddressToCoordinate($('#address').val());
+        }
+    });
+
+    $('#submit').on('click', function(e) {
+        e.preventDefault();
+
+        searchAddressToCoordinate($('#address').val());
+    });
+
+    /*searchAddressToCoordinate('영덕동 1005');*/
+}
+
+naver.maps.onJSContentLoaded = initGeocoder;
+</script>
+</body>
+</html>
